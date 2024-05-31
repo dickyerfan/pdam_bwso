@@ -24,6 +24,7 @@
                                     <th class=" text-center">Jenis Aduan</th>
                                     <th class=" text-center">Wilayah Aduan</th>
                                     <th class=" text-center">Isi Aduan</th>
+                                    <th class=" text-center">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -48,6 +49,9 @@
                                         <td><?= $row->jenis_aduan ?></td>
                                         <td><?= $row->wil_layanan ?></td>
                                         <td><?= $row->isi_aduan ?></td>
+                                        <td>
+                                            <a href="<?= base_url('pengaduan/detail/') ?><?= $row->id_pengaduan ?>"><span class="btn btn-primary btn-sm" style="font-size: 0.7rem;">Detail</span></a>
+                                        </td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>
