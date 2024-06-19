@@ -29,7 +29,7 @@ class Backup extends CI_Controller
         $tanggal = date('Ymd-His');
         $config = array(
             'format' => 'zip',
-            'filename' => 'bonji_' . $tanggal . '_db.sql',
+            'filename' => 'pdambwso_' . $tanggal . '_db.sql',
             'add_drop' => true,
             'add_insert' => true,
             'newline' => "\n",

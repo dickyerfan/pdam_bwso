@@ -320,7 +320,22 @@ class Dashboard extends CI_Controller
 			'umum' => 'http://103.160.148.174/api_pegawai_dashboard/get_umum',
 			'keuangan' => 'http://103.160.148.174/api_pegawai_dashboard/get_keuangan',
 			'perencanaan' => 'http://103.160.148.174/api_pegawai_dashboard/get_perencanaan',
-			'pemeliharaan' => 'http://103.160.148.174/api_pegawai_dashboard/get_pemeliharaan'
+			'pemeliharaan' => 'http://103.160.148.174/api_pegawai_dashboard/get_pemeliharaan',
+			'bondowoso' => 'http://103.160.148.174/api_pegawai_dashboard/get_bondowoso',
+			'sukosari_1' => 'http://103.160.148.174/api_pegawai_dashboard/get_sukosari_1',
+			'maesan' => 'http://103.160.148.174/api_pegawai_dashboard/get_maesan',
+			'tegalampel' => 'http://103.160.148.174/api_pegawai_dashboard/get_tegalampel',
+			'tapen' => 'http://103.160.148.174/api_pegawai_dashboard/get_tapen',
+			'prajekan' => 'http://103.160.148.174/api_pegawai_dashboard/get_prajekan',
+			'tlogosari' => 'http://103.160.148.174/api_pegawai_dashboard/get_tlogosari',
+			'wringin' => 'http://103.160.148.174/api_pegawai_dashboard/get_wringin',
+			'curahdami' => 'http://103.160.148.174/api_pegawai_dashboard/get_curahdami',
+			'tamanan' => 'http://103.160.148.174/api_pegawai_dashboard/get_tamanan',
+			'tenggarang' => 'http://103.160.148.174/api_pegawai_dashboard/get_tenggarang',
+			'tamankrocok' => 'http://103.160.148.174/api_pegawai_dashboard/get_tamankrocok',
+			'wonosari' => 'http://103.160.148.174/api_pegawai_dashboard/get_wonosari',
+			'sukosari_2' => 'http://103.160.148.174/api_pegawai_dashboard/get_sukosari_2',
+			'amdk' => 'http://103.160.148.174/api_pegawai_dashboard/get_amdk'
 		];
 
 		$data = [];

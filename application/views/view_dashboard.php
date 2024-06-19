@@ -440,7 +440,7 @@
                                 <td>
                                     <?php
                                     if (isset($umum['ks_admin']['nama'])) {
-                                        echo $admin['ks_admin']['nama'];
+                                        echo $umum['ks_admin']['nama'];
                                     } else {
                                         echo '';
                                     }
@@ -823,7 +823,7 @@
     </div>
 
     <!-- Modal Suko 1 -->
-    <!-- <div class="modal fade" id="suko1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="suko1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-warning text-dark">
@@ -838,43 +838,85 @@
                             <tr>
                                 <td class="fw-bold">KA UPK</td>
                                 <td> : </td>
-                                <?php $suko1 = isset($suko1->nama)  ? $suko1->nama : ''  ?>
-                                <td><?= $suko1 ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($sukosari_1['suko1']['nama'])) {
+                                        echo $sukosari_1['suko1']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="fw-bold">Pelaksana Administrasi</td>
                                 <td> : </td>
-                                <?php $suko1_p_adm = isset($suko1_p_adm->nama)  ? $suko1_p_adm->nama : ''  ?>
-                                <td><?= $suko1_p_adm ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($sukosari_1['suko1_p_adm']['nama'])) {
+                                        echo $sukosari_1['suko1_p_adm']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($suko1_s_adm as $row) : ?>
+                            <?php foreach ($sukosari_1['suko1_s_adm'] as $row) : ?>
                                 <tr>
                                     <td>Staf Administrasi</td>
                                     <td> : </td>
-                                    <?php $suko1_s_adm = isset($suko1_s_adm->nama)  ? $suko1_s_adm->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($sukosari_1['suko1_s_adm'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
-                            <?php foreach ($suko1_s_admPm as $row) : ?>
+                            <?php foreach ($sukosari_1['suko1_s_admPm'] as $row) : ?>
                                 <tr>
                                     <td>Staf Administrasi Pembaca Meter</td>
                                     <td> : </td>
-                                    <?php $suko1_s_admPm = isset($suko1_s_admPm->nama)  ? $suko1_s_admPm->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($sukosari_1['suko1_s_admPm'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                             <tr>
                                 <td class="fw-bold">Pelaksana Teknik</td>
                                 <td> : </td>
-                                <?php $suko1_p_tek = isset($suko1_p_tek->nama)  ? $suko1_p_tek->nama : ''  ?>
-                                <td><?= $suko1_p_tek ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($sukosari_1['suko1_p_tek']['nama'])) {
+                                        echo $sukosari_1['suko1_p_tek']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($suko1_s_tek as $row) : ?>
+                            <?php foreach ($sukosari_1['suko1_s_tek'] as $row) : ?>
                                 <tr>
                                     <td>Staf Teknik</td>
                                     <td> : </td>
-                                    <?php $suko1_s_tek = isset($suko1_s_tek->nama)  ? $suko1_s_tek->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($sukosari_1['suko1_s_tek'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                         </tbody>
@@ -882,9 +924,9 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
     <!-- Modal Bondowoso -->
-    <!-- <div class="modal fade" id="bondowoso" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="bondowoso" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-warning text-dark">
@@ -899,57 +941,113 @@
                             <tr>
                                 <td class="fw-bold">KA UPK</td>
                                 <td> : </td>
-                                <?php $bond = isset($bond->nama)  ? $bond->nama : ''  ?>
-                                <td><?= $bond ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($bondowoso['bond']['nama'])) {
+                                        echo $bondowoso['bond']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="fw-bold">Pelaksana Administrasi</td>
                                 <td> : </td>
-                                <?php $bond_p_adm = isset($bond_p_adm->nama)  ? $bond_p_adm->nama : ''  ?>
-                                <td><?= $bond_p_adm ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($bondowoso['bond_p_adm']['nama'])) {
+                                        echo $bondowoso['bond_p_adm']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($bond_s_adm as $row) : ?>
+                            <?php foreach ($bondowoso['bond_s_adm'] as $row) : ?>
                                 <tr>
                                     <td>Staf Administrasi</td>
                                     <td> : </td>
-                                    <?php $bond_s_adm = isset($bond_s_adm->nama)  ? $bond_s_adm->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($bondowoso['bond_s_adm'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
-                            <?php foreach ($bond_s_admPm as $row) : ?>
+                            <?php foreach ($bondowoso['bond_s_admPm'] as $row) : ?>
                                 <tr>
                                     <td>Staf Administrasi Pembaca Meter</td>
                                     <td> : </td>
-                                    <?php $bond_s_admPm = isset($bond_s_admPm->nama)  ? $bond_s_admPm->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($bondowoso['bond_s_admPm'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                             <tr>
                                 <td class="fw-bold">Pelaksana Teknik</td>
                                 <td> : </td>
-                                <?php $bond_p_tek = isset($bond_p_tek->nama)  ? $bond_p_tek->nama : ''  ?>
-                                <td><?= $bond_p_tek ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($bondowoso['bond_p_tek']['nama'])) {
+                                        echo $bondowoso['bond_p_tek']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($bond_s_tek as $row) : ?>
+                            <?php foreach ($bondowoso['bond_s_tek'] as $row) : ?>
                                 <tr>
                                     <td>Staf Teknik</td>
                                     <td> : </td>
-                                    <?php $bond_s_tek = isset($bond_s_tek->nama)  ? $bond_s_tek->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($bondowoso['bond_s_tek'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                             <tr>
                                 <td class="fw-bold">Pelaksana Pelayanan Pelanggan</td>
                                 <td> : </td>
-                                <?php $bond_p_lang = isset($bond_p_lang->nama)  ? $bond_p_lang->nama : ''  ?>
-                                <td><?= $bond_p_lang ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($bondowoso['bond_p_lang']['nama'])) {
+                                        echo $bondowoso['bond_p_lang']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($bond_s_lang as $row) : ?>
+                            <?php foreach ($bondowoso['bond_s_lang'] as $row) : ?>
                                 <tr>
                                     <td>Staf Pelayanan Pelanggan</td>
                                     <td> : </td>
-                                    <?php $bond_s_lang = isset($bond_s_lang->nama)  ? $bond_s_lang->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($bondowoso['bond_s_lang'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                         </tbody>
@@ -957,10 +1055,10 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <!-- Modal Maesan -->
-    <!-- <div class="modal fade" id="maesan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="maesan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-warning text-dark">
@@ -975,43 +1073,85 @@
                             <tr>
                                 <td class="fw-bold">KA UPK</td>
                                 <td> : </td>
-                                <?php $maesan = isset($maesan->nama)  ? $maesan->nama : ''  ?>
-                                <td><?= $maesan ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($maesan['maesan']['nama'])) {
+                                        echo $maesan['maesan']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="fw-bold">Pelaksana Administrasi</td>
                                 <td> : </td>
-                                <?php $maesan_p_adm = isset($maesan_p_adm->nama)  ? $maesan_p_adm->nama : ''  ?>
-                                <td><?= $maesan_p_adm ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($maesan['maesan_p_adm']['nama'])) {
+                                        echo $maesan['maesan_p_adm']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($maesan_s_adm as $row) : ?>
+                            <?php foreach ($maesan['maesan_s_adm'] as $row) : ?>
                                 <tr>
                                     <td>Staf Administrasi</td>
                                     <td> : </td>
-                                    <?php $maesan_s_adm = isset($maesan_s_adm->nama)  ? $maesan_s_adm->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($maesan['maesan_s_adm'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
-                            <?php foreach ($maesan_s_admPm as $row) : ?>
+                            <?php foreach ($maesan['maesan_s_admPm'] as $row) : ?>
                                 <tr>
                                     <td>Staf Administrasi Pembaca Meter</td>
                                     <td> : </td>
-                                    <?php $maesan_s_admPm = isset($maesan_s_admPm->nama)  ? $maesan_s_admPm->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($maesan['maesan_s_admPm'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                             <tr>
                                 <td class="fw-bold">Pelaksana Teknik</td>
                                 <td> : </td>
-                                <?php $maesan_p_tek = isset($maesan_p_tek->nama)  ? $maesan_p_tek->nama : ''  ?>
-                                <td><?= $maesan_p_tek ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($maesan['maesan_p_tek']['nama'])) {
+                                        echo $maesan['maesan_p_tek']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($maesan_s_tek as $row) : ?>
+                            <?php foreach ($maesan['maesan_s_tek'] as $row) : ?>
                                 <tr>
                                     <td>Staf Teknik</td>
                                     <td> : </td>
-                                    <?php $maesan_s_tek = isset($maesan_s_tek->nama)  ? $maesan_s_tek->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($maesan['maesan_s_tek'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                         </tbody>
@@ -1019,10 +1159,10 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <!-- Modal Tegalampel -->
-    <!-- <div class="modal fade" id="tegalampel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="tegalampel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-warning text-dark">
@@ -1037,43 +1177,85 @@
                             <tr>
                                 <td class="fw-bold">KA UPK</td>
                                 <td> : </td>
-                                <?php $tegalampel = isset($tegalampel->nama)  ? $tegalampel->nama : ''  ?>
-                                <td><?= $tegalampel ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($tegalampel['tegalampel']['nama'])) {
+                                        echo $tegalampel['tegalampel']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="fw-bold">Pelaksana Administrasi</td>
                                 <td> : </td>
-                                <?php $tegalampel_p_adm = isset($tegalampel_p_adm->nama)  ? $tegalampel_p_adm->nama : ''  ?>
-                                <td><?= $tegalampel_p_adm ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($tegalampel['tegalampel_p_adm']['nama'])) {
+                                        echo $tegalampel['tegalampel_p_adm']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($tegalampel_s_adm as $row) : ?>
+                            <?php foreach ($tegalampel['tegalampel_s_adm'] as $row) : ?>
                                 <tr>
                                     <td>Staf Administrasi</td>
                                     <td> : </td>
-                                    <?php $tegalampel_s_adm = isset($tegalampel_s_adm->nama)  ? $tegalampel_s_adm->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($tegalampel['tegalampel_s_adm'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
-                            <?php foreach ($tegalampel_s_admPm as $row) : ?>
+                            <?php foreach ($tegalampel['tegalampel_s_admPm'] as $row) : ?>
                                 <tr>
                                     <td>Staf Administrasi Pembaca Meter</td>
                                     <td> : </td>
-                                    <?php $tegalampel_s_admPm = isset($tegalampel_s_admPm->nama)  ? $tegalampel_s_admPm->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($tegalampel['tegalampel_s_admPm'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                             <tr>
                                 <td class="fw-bold">Pelaksana Teknik</td>
                                 <td> : </td>
-                                <?php $tegalampel_p_tek = isset($tegalampel_p_tek->nama)  ? $tegalampel_p_tek->nama : ''  ?>
-                                <td><?= $tegalampel_p_tek ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($tegalampel['tegalampel_p_tek']['nama'])) {
+                                        echo $tegalampel['tegalampel_p_tek']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($tegalampel_s_tek as $row) : ?>
+                            <?php foreach ($tegalampel['tegalampel_s_tek'] as $row) : ?>
                                 <tr>
                                     <td>Staf Teknik</td>
                                     <td> : </td>
-                                    <?php $tegalampel_s_tek = isset($tegalampel_s_tek->nama)  ? $tegalampel_s_tek->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($tegalampel['tegalampel_s_tek'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                         </tbody>
@@ -1081,10 +1263,10 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <!-- Modal Tapen -->
-    <!-- <div class="modal fade" id="tapen" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="tapen" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-warning text-dark">
@@ -1099,43 +1281,85 @@
                             <tr>
                                 <td class="fw-bold">KA UPK</td>
                                 <td> : </td>
-                                <?php $tapen = isset($tapen->nama)  ? $tapen->nama : ''  ?>
-                                <td><?= $tapen ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($tapen['tapen']['nama'])) {
+                                        echo $tapen['tapen']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="fw-bold">Pelaksana Administrasi</td>
                                 <td> : </td>
-                                <?php $tapen_p_adm = isset($tapen_p_adm->nama)  ? $tapen_p_adm->nama : ''  ?>
-                                <td><?= $tapen_p_adm ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($tapen['tapen_p_adm']['nama'])) {
+                                        echo $tapen['tapen_p_adm']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($tapen_s_adm as $row) : ?>
+                            <?php foreach ($tapen['tapen_s_adm'] as $row) : ?>
                                 <tr>
                                     <td>Staf Administrasi</td>
                                     <td> : </td>
-                                    <?php $tapen_s_adm = isset($tapen_s_adm->nama)  ? $tapen_s_adm->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($tapen['tapen_s_adm'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
-                            <?php foreach ($tapen_s_admPm as $row) : ?>
+                            <?php foreach ($tapen['tapen_s_admPm'] as $row) : ?>
                                 <tr>
                                     <td>Staf Administrasi Pembaca Meter</td>
                                     <td> : </td>
-                                    <?php $tapen_s_admPm = isset($tapen_s_admPm->nama)  ? $tapen_s_admPm->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($tapen['tapen_s_admPm'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                             <tr>
                                 <td class="fw-bold">Pelaksana Teknik</td>
                                 <td> : </td>
-                                <?php $tapen_p_tek = isset($tapen_p_tek->nama)  ? $tapen_p_tek->nama : ''  ?>
-                                <td><?= $tapen_p_tek ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($tapen['tapen_p_tek']['nama'])) {
+                                        echo $tapen['tapen_p_tek']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($tapen_s_tek as $row) : ?>
+                            <?php foreach ($tapen['tapen_s_tek'] as $row) : ?>
                                 <tr>
                                     <td>Staf Teknik</td>
                                     <td> : </td>
-                                    <?php $tapen_s_tek = isset($tapen_s_tek->nama)  ? $tapen_s_tek->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($tapen['tapen_s_tek'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                         </tbody>
@@ -1143,10 +1367,10 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <!-- Modal Prajekan-->
-    <!-- <div class="modal fade" id="prajekan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="prajekan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-warning text-dark">
@@ -1161,43 +1385,85 @@
                             <tr>
                                 <td class="fw-bold">KA UPK</td>
                                 <td> : </td>
-                                <?php $prajekan = isset($prajekan->nama)  ? $prajekan->nama : ''  ?>
-                                <td><?= $prajekan ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($prajekan['prajekan']['nama'])) {
+                                        echo $prajekan['prajekan']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="fw-bold">Pelaksana Administrasi</td>
                                 <td> : </td>
-                                <?php $prajekan_p_adm = isset($prajekan_p_adm->nama)  ? $prajekan_p_adm->nama : ''  ?>
-                                <td><?= $prajekan_p_adm ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($prajekan['prajekan_p_adm']['nama'])) {
+                                        echo $prajekan['prajekan_p_adm']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($prajekan_s_adm as $row) : ?>
+                            <?php foreach ($prajekan['prajekan_s_adm'] as $row) : ?>
                                 <tr>
                                     <td>Staf Administrasi</td>
                                     <td> : </td>
-                                    <?php $prajekan_s_adm = isset($prajekan_s_adm->nama)  ? $prajekan_s_adm->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($prajekan['prajekan_s_adm'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
-                            <?php foreach ($prajekan_s_admPm as $row) : ?>
+                            <?php foreach ($prajekan['prajekan_s_admPm'] as $row) : ?>
                                 <tr>
                                     <td>Staf Administrasi Pembaca Meter</td>
                                     <td> : </td>
-                                    <?php $prajekan_s_admPm = isset($prajekan_s_admPm->nama)  ? $prajekan_s_admPm->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($prajekan['prajekan_s_admPm'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                             <tr>
                                 <td class="fw-bold">Pelaksana Teknik</td>
                                 <td> : </td>
-                                <?php $prajekan_p_tek = isset($prajekan_p_tek->nama)  ? $prajekan_p_tek->nama : ''  ?>
-                                <td><?= $prajekan_p_tek ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($prajekan['prajekan_p_tek']['nama'])) {
+                                        echo $prajekan['prajekan_p_tek']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($prajekan_s_tek as $row) : ?>
+                            <?php foreach ($prajekan['prajekan_s_tek'] as $row) : ?>
                                 <tr>
                                     <td>Staf Teknik</td>
                                     <td> : </td>
-                                    <?php $prajekan_s_tek = isset($prajekan_s_tek->nama)  ? $prajekan_s_tek->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($prajekan['prajekan_s_tek'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                         </tbody>
@@ -1205,10 +1471,10 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <!-- Modal Tlogosari-->
-    <!-- <div class="modal fade" id="tlogosari" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="tlogosari" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-warning text-dark">
@@ -1223,43 +1489,85 @@
                             <tr>
                                 <td class="fw-bold">KA UPK</td>
                                 <td> : </td>
-                                <?php $tlogosari = isset($tlogosari->nama)  ? $tlogosari->nama : ''  ?>
-                                <td><?= $tlogosari ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($tlogosari['tlogosari']['nama'])) {
+                                        echo $tlogosari['tlogosari']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="fw-bold">Pelaksana Administrasi</td>
                                 <td> : </td>
-                                <?php $tlogosari_p_adm = isset($tlogosari_p_adm->nama)  ? $tlogosari_p_adm->nama : ''  ?>
-                                <td><?= $tlogosari_p_adm ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($tlogosari['tlogosari_p_adm']['nama'])) {
+                                        echo $tlogosari['tlogosari_p_adm']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($tlogosari_s_adm as $row) : ?>
+                            <?php foreach ($tlogosari['tlogosari_s_adm'] as $row) : ?>
                                 <tr>
                                     <td>Staf Administrasi</td>
                                     <td> : </td>
-                                    <?php $tlogosari_s_adm = isset($tlogosari_s_adm->nama)  ? $tlogosari_s_adm->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($tlogosari['tlogosari_s_adm'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
-                            <?php foreach ($tlogosari_s_admPm as $row) : ?>
+                            <?php foreach ($tlogosari['tlogosari_s_admPm'] as $row) : ?>
                                 <tr>
                                     <td>Staf Administrasi Pembaca Meter</td>
                                     <td> : </td>
-                                    <?php $tlogosari_s_admPm = isset($tlogosari_s_admPm->nama)  ? $tlogosari_s_admPm->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($tlogosari['tlogosari_s_admPm'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                             <tr>
                                 <td class="fw-bold">Pelaksana Teknik</td>
                                 <td> : </td>
-                                <?php $tlogosari_p_tek = isset($tlogosari_p_tek->nama)  ? $tlogosari_p_tek->nama : ''  ?>
-                                <td><?= $tlogosari_p_tek ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($tlogosari['tlogosari_p_tek']['nama'])) {
+                                        echo $tlogosari['tlogosari_p_tek']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($tlogosari_s_tek as $row) : ?>
+                            <?php foreach ($tlogosari['tlogosari_s_tek'] as $row) : ?>
                                 <tr>
                                     <td>Staf Teknik</td>
                                     <td> : </td>
-                                    <?php $tlogosari_s_tek = isset($tlogosari_s_tek->nama)  ? $tlogosari_s_tek->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($tlogosari['tlogosari_s_tek'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                         </tbody>
@@ -1267,10 +1575,10 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <!-- Modal Wringin-->
-    <!-- <div class="modal fade" id="wringin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="wringin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-warning text-dark">
@@ -1285,43 +1593,85 @@
                             <tr>
                                 <td class="fw-bold">KA UPK</td>
                                 <td> : </td>
-                                <?php $wringin = isset($wringin->nama)  ? $wringin->nama : ''  ?>
-                                <td><?= $wringin ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($wringin['wringin']['nama'])) {
+                                        echo $wringin['wringin']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="fw-bold">Pelaksana Administrasi</td>
                                 <td> : </td>
-                                <?php $wringin_p_adm = isset($wringin_p_adm->nama)  ? $wringin_p_adm->nama : ''  ?>
-                                <td><?= $wringin_p_adm ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($wringin['wringin_p_adm']['nama'])) {
+                                        echo $wringin['wringin_p_adm']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($wringin_s_adm as $row) : ?>
+                            <?php foreach ($wringin['wringin_s_adm'] as $row) : ?>
                                 <tr>
                                     <td>Staf Administrasi</td>
                                     <td> : </td>
-                                    <?php $wringin_s_adm = isset($wringin_s_adm->nama)  ? $wringin_s_adm->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($wringin['wringin_s_adm'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
-                            <?php foreach ($wringin_s_admPm as $row) : ?>
+                            <?php foreach ($wringin['wringin_s_admPm'] as $row) : ?>
                                 <tr>
                                     <td>Staf Administrasi Pembaca Meter</td>
                                     <td> : </td>
-                                    <?php $wringin_s_admPm = isset($wringin_s_admPm->nama)  ? $wringin_s_admPm->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($wringin['wringin_s_admPm'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                             <tr>
                                 <td class="fw-bold">Pelaksana Teknik</td>
                                 <td> : </td>
-                                <?php $wringin_p_tek = isset($wringin_p_tek->nama)  ? $wringin_p_tek->nama : ''  ?>
-                                <td><?= $wringin_p_tek ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($wringin['wringin_p_tek']['nama'])) {
+                                        echo $wringin['wringin_p_tek']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($wringin_s_tek as $row) : ?>
+                            <?php foreach ($wringin['wringin_s_tek'] as $row) : ?>
                                 <tr>
                                     <td>Staf Teknik</td>
                                     <td> : </td>
-                                    <?php $wringin_s_tek = isset($wringin_s_tek->nama)  ? $wringin_s_tek->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($wringin['wringin_s_tek'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                         </tbody>
@@ -1329,10 +1679,10 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <!-- Modal Curahdami-->
-    <!-- <div class="modal fade" id="curahdami" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="curahdami" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-warning text-dark">
@@ -1347,43 +1697,85 @@
                             <tr>
                                 <td class="fw-bold">KA UPK</td>
                                 <td> : </td>
-                                <?php $curahdami = isset($curahdami->nama)  ? $curahdami->nama : ''  ?>
-                                <td><?= $curahdami ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($curahdami['curahdami']['nama'])) {
+                                        echo $curahdami['curahdami']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="fw-bold">Pelaksana Administrasi</td>
                                 <td> : </td>
-                                <?php $curahdami_p_adm = isset($curahdami_p_adm->nama)  ? $curahdami_p_adm->nama : ''  ?>
-                                <td><?= $curahdami_p_adm ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($curahdami['curahdami_p_adm']['nama'])) {
+                                        echo $curahdami['curahdami_p_adm']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($curahdami_s_adm as $row) : ?>
+                            <?php foreach ($curahdami['curahdami_s_adm'] as $row) : ?>
                                 <tr>
                                     <td>Staf Administrasi</td>
                                     <td> : </td>
-                                    <?php $curahdami_s_adm = isset($curahdami_s_adm->nama)  ? $curahdami_s_adm->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($curahdami['curahdami_s_adm'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
-                            <?php foreach ($curahdami_s_admPm as $row) : ?>
+                            <?php foreach ($curahdami['curahdami_s_admPm'] as $row) : ?>
                                 <tr>
                                     <td>Staf Administrasi Pembaca Meter</td>
                                     <td> : </td>
-                                    <?php $curahdami_s_admPm = isset($curahdami_s_admPm->nama)  ? $curahdami_s_admPm->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($curahdami['curahdami_s_admPm'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                             <tr>
                                 <td class="fw-bold">Pelaksana Teknik</td>
                                 <td> : </td>
-                                <?php $curahdami_p_tek = isset($curahdami_p_tek->nama)  ? $curahdami_p_tek->nama : ''  ?>
-                                <td><?= $curahdami_p_tek ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($curahdami['curahdami_p_tek']['nama'])) {
+                                        echo $curahdami['curahdami_p_tek']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($curahdami_s_tek as $row) : ?>
+                            <?php foreach ($curahdami['curahdami_s_tek'] as $row) : ?>
                                 <tr>
                                     <td>Staf Teknik</td>
                                     <td> : </td>
-                                    <?php $curahdami_s_tek = isset($curahdami_s_tek->nama)  ? $curahdami_s_tek->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($curahdami['curahdami_s_tek'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                         </tbody>
@@ -1391,10 +1783,10 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <!-- Modal Tamanan-->
-    <!-- <div class="modal fade" id="tamanan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="tamanan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-warning text-dark">
@@ -1409,43 +1801,85 @@
                             <tr>
                                 <td class="fw-bold">KA UPK</td>
                                 <td> : </td>
-                                <?php $tamanan = isset($tamanan->nama)  ? $tamanan->nama : ''  ?>
-                                <td><?= $tamanan ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($tamanan['tamanan']['nama'])) {
+                                        echo $tamanan['tamanan']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="fw-bold">Pelaksana Administrasi</td>
                                 <td> : </td>
-                                <?php $tamanan_p_adm = isset($tamanan_p_adm->nama)  ? $tamanan_p_adm->nama : ''  ?>
-                                <td><?= $tamanan_p_adm ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($tamanan['tamanan_p_adm']['nama'])) {
+                                        echo $tamanan['tamanan_p_adm']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($tamanan_s_adm as $row) : ?>
+                            <?php foreach ($tamanan['tamanan_s_adm'] as $row) : ?>
                                 <tr>
                                     <td>Staf Administrasi</td>
                                     <td> : </td>
-                                    <?php $tamanan_s_adm = isset($tamanan_s_adm->nama)  ? $tamanan_s_adm->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($tamanan['tamanan_s_adm'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
-                            <?php foreach ($tamanan_s_admPm as $row) : ?>
+                            <?php foreach ($tamanan['tamanan_s_admPm'] as $row) : ?>
                                 <tr>
                                     <td>Staf Administrasi Pembaca Meter</td>
                                     <td> : </td>
-                                    <?php $tamanan_s_admPm = isset($tamanan_s_admPm->nama)  ? $tamanan_s_admPm->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($tamanan['tamanan_s_admPm'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                             <tr>
                                 <td class="fw-bold">Pelaksana Teknik</td>
                                 <td> : </td>
-                                <?php $tamanan_p_tek = isset($tamanan_p_tek->nama)  ? $tamanan_p_tek->nama : ''  ?>
-                                <td><?= $tamanan_p_tek ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($tamanan['tamanan_p_tek']['nama'])) {
+                                        echo $tamanan['tamanan_p_tek']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($tamanan_s_tek as $row) : ?>
+                            <?php foreach ($tamanan['tamanan_s_tek'] as $row) : ?>
                                 <tr>
                                     <td>Staf Teknik</td>
                                     <td> : </td>
-                                    <?php $tamanan_s_tek = isset($tamanan_s_tek->nama)  ? $tamanan_s_tek->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($tamanan['tamanan_s_tek'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                         </tbody>
@@ -1453,10 +1887,10 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <!-- Modal Tenggarang-->
-    <!-- <div class="modal fade" id="tenggarang" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="tenggarang" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-warning text-dark">
@@ -1471,43 +1905,85 @@
                             <tr>
                                 <td class="fw-bold">KA UPK</td>
                                 <td> : </td>
-                                <?php $tenggarang = isset($tenggarang->nama)  ? $tenggarang->nama : ''  ?>
-                                <td><?= $tenggarang ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($tenggarang['tenggarang']['nama'])) {
+                                        echo $tenggarang['tenggarang']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="fw-bold">Pelaksana Administrasi</td>
                                 <td> : </td>
-                                <?php $tenggarang_p_adm = isset($tenggarang_p_adm->nama)  ? $tenggarang_p_adm->nama : ''  ?>
-                                <td><?= $tenggarang_p_adm ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($tenggarang['tenggarang_p_adm']['nama'])) {
+                                        echo $tenggarang['tenggarang_p_adm']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($tenggarang_s_adm as $row) : ?>
+                            <?php foreach ($tenggarang['tenggarang_s_adm'] as $row) : ?>
                                 <tr>
                                     <td>Staf Administrasi</td>
                                     <td> : </td>
-                                    <?php $tenggarang_s_adm = isset($tenggarang_s_adm->nama)  ? $tenggarang_s_adm->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($tenggarang['tenggarang_s_adm'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
-                            <?php foreach ($tenggarang_s_admPm as $row) : ?>
+                            <?php foreach ($tenggarang['tenggarang_s_admPm'] as $row) : ?>
                                 <tr>
                                     <td>Staf Administrasi Pembaca Meter</td>
                                     <td> : </td>
-                                    <?php $tenggarang_s_admPm = isset($tenggarang_s_admPm->nama)  ? $tenggarang_s_admPm->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($tenggarang['tenggarang_s_admPm'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                             <tr>
                                 <td class="fw-bold">Pelaksana Teknik</td>
                                 <td> : </td>
-                                <?php $tenggarang_p_tek = isset($tenggarang_p_tek->nama)  ? $tenggarang_p_tek->nama : ''  ?>
-                                <td><?= $tenggarang_p_tek ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($tenggarang['tenggarang_p_tek']['nama'])) {
+                                        echo $tenggarang['tenggarang_p_tek']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($tenggarang_s_tek as $row) : ?>
+                            <?php foreach ($tenggarang['tenggarang_s_tek'] as $row) : ?>
                                 <tr>
                                     <td>Staf Teknik</td>
                                     <td> : </td>
-                                    <?php $tenggarang_s_tek = isset($tenggarang_s_tek->nama)  ? $tenggarang_s_tek->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($tenggarang['tenggarang_s_tek'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                         </tbody>
@@ -1515,10 +1991,10 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <!-- Modal Tamankrocok-->
-    <!-- <div class="modal fade" id="tamankrocok" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="tamankrocok" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-warning text-dark">
@@ -1533,43 +2009,85 @@
                             <tr>
                                 <td class="fw-bold">KA UPK</td>
                                 <td> : </td>
-                                <?php $tamankrocok = isset($tamankrocok->nama)  ? $tamankrocok->nama : ''  ?>
-                                <td><?= $tamankrocok ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($tamankrocok['tamankrocok']['nama'])) {
+                                        echo $tamankrocok['tamankrocok']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="fw-bold">Pelaksana Administrasi</td>
                                 <td> : </td>
-                                <?php $tamankrocok_p_adm = isset($tamankrocok_p_adm->nama)  ? $tamankrocok_p_adm->nama : ''  ?>
-                                <td><?= $tamankrocok_p_adm ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($tamankrocok['tamankrocok_p_adm']['nama'])) {
+                                        echo $tamankrocok['tamankrocok_p_adm']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($tamankrocok_s_adm as $row) : ?>
+                            <?php foreach ($tamankrocok['tamankrocok_s_adm'] as $row) : ?>
                                 <tr>
                                     <td>Staf Administrasi</td>
                                     <td> : </td>
-                                    <?php $tamankrocok_s_adm = isset($tamankrocok_s_adm->nama)  ? $tamankrocok_s_adm->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($tamankrocok['tamankrocok_s_adm'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
-                            <?php foreach ($tamankrocok_s_admPm as $row) : ?>
+                            <?php foreach ($tamankrocok['tamankrocok_s_admPm'] as $row) : ?>
                                 <tr>
                                     <td>Staf Administrasi Pembaca Meter</td>
                                     <td> : </td>
-                                    <?php $tamankrocok_s_admPm = isset($tamankrocok_s_admPm->nama)  ? $tamankrocok_s_admPm->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($tamankrocok['tamankrocok_s_admPm'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                             <tr>
                                 <td class="fw-bold">Pelaksana Teknik</td>
                                 <td> : </td>
-                                <?php $tamankrocok_p_tek = isset($tamankrocok_p_tek->nama)  ? $tamankrocok_p_tek->nama : ''  ?>
-                                <td><?= $tamankrocok_p_tek ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($tamankrocok['tamankrocok_p_tek']['nama'])) {
+                                        echo $tamankrocok['tamankrocok_p_tek']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($tamankrocok_s_tek as $row) : ?>
+                            <?php foreach ($tamankrocok['tamankrocok_s_tek'] as $row) : ?>
                                 <tr>
                                     <td>Staf Teknik</td>
                                     <td> : </td>
-                                    <?php $tamankrocok_s_tek = isset($tamankrocok_s_tek->nama)  ? $tamankrocok_s_tek->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($tamankrocok['tamankrocok_s_tek'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                         </tbody>
@@ -1577,10 +2095,10 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <!-- Modal wonosari-->
-    <!-- <div class="modal fade" id="wonosari" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="wonosari" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-warning text-dark">
@@ -1595,43 +2113,85 @@
                             <tr>
                                 <td class="fw-bold">KA UPK</td>
                                 <td> : </td>
-                                <?php $wonosari = isset($wonosari->nama)  ? $wonosari->nama : ''  ?>
-                                <td><?= $wonosari ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($wonosari['wonosari']['nama'])) {
+                                        echo $wonosari['wonosari']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="fw-bold">Pelaksana Administrasi</td>
                                 <td> : </td>
-                                <?php $wonosari_p_adm = isset($wonosari_p_adm->nama)  ? $wonosari_p_adm->nama : ''  ?>
-                                <td><?= $wonosari_p_adm ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($wonosari['wonosari_p_adm']['nama'])) {
+                                        echo $wonosari['wonosari_p_adm']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($wonosari_s_adm as $row) : ?>
+                            <?php foreach ($wonosari['wonosari_s_adm'] as $row) : ?>
                                 <tr>
                                     <td>Staf Administrasi</td>
                                     <td> : </td>
-                                    <?php $wonosari_s_adm = isset($wonosari_s_adm->nama)  ? $wonosari_s_adm->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($wonosari['wonosari_s_adm'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
-                            <?php foreach ($wonosari_s_admPm as $row) : ?>
+                            <?php foreach ($wonosari['wonosari_s_admPm'] as $row) : ?>
                                 <tr>
                                     <td>Staf Administrasi Pembaca Meter</td>
                                     <td> : </td>
-                                    <?php $wonosari_s_admPm = isset($wonosari_s_admPm->nama)  ? $wonosari_s_admPm->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($wonosari['wonosari_s_admPm'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                             <tr>
                                 <td class="fw-bold">Pelaksana Teknik</td>
                                 <td> : </td>
-                                <?php $wonosari_p_tek = isset($wonosari_p_tek->nama)  ? $wonosari_p_tek->nama : ''  ?>
-                                <td><?= $wonosari_p_tek ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($wonosari['wonosari_p_tek']['nama'])) {
+                                        echo $wonosari['wonosari_p_tek']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($wonosari_s_tek as $row) : ?>
+                            <?php foreach ($wonosari['wonosari_s_tek'] as $row) : ?>
                                 <tr>
                                     <td>Staf Teknik</td>
                                     <td> : </td>
-                                    <?php $wonosari_s_tek = isset($wonosari_s_tek->nama)  ? $wonosari_s_tek->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($wonosari['wonosari_s_tek'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                         </tbody>
@@ -1639,10 +2199,10 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <!-- Modal Sukosari 2-->
-    <!-- <div class="modal fade" id="suko2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="suko2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-warning text-dark">
@@ -1657,43 +2217,85 @@
                             <tr>
                                 <td class="fw-bold">KA UPK</td>
                                 <td> : </td>
-                                <?php $suko2 = isset($suko2->nama)  ? $suko2->nama : ''  ?>
-                                <td><?= $suko2 ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($sukosari_2['suko2']['nama'])) {
+                                        echo $sukosari_2['suko2']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="fw-bold">Pelaksana Administrasi</td>
                                 <td> : </td>
-                                <?php $suko2_p_adm = isset($suko2_p_adm->nama)  ? $suko2_p_adm->nama : ''  ?>
-                                <td><?= $suko2_p_adm ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($sukosari_2['suko2_p_adm']['nama'])) {
+                                        echo $sukosari_2['suko2_p_adm']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($suko2_s_adm as $row) : ?>
+                            <?php foreach ($sukosari_2['suko2_s_adm'] as $row) : ?>
                                 <tr>
                                     <td>Staf Administrasi</td>
                                     <td> : </td>
-                                    <?php $suko2_s_adm = isset($suko2_s_adm->nama)  ? $suko2_s_adm->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($sukosari_2['suko2_s_adm'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
-                            <?php foreach ($suko2_s_admPm as $row) : ?>
+                            <?php foreach ($sukosari_2['suko2_s_admPm'] as $row) : ?>
                                 <tr>
                                     <td>Staf Administrasi Pembaca Meter</td>
                                     <td> : </td>
-                                    <?php $suko2_s_admPm = isset($suko2_s_admPm->nama)  ? $suko2_s_admPm->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($sukosari_2['suko2_s_admPm'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                             <tr>
                                 <td class="fw-bold">Pelaksana Teknik</td>
                                 <td> : </td>
-                                <?php $suko2_p_tek = isset($suko2_p_tek->nama)  ? $suko2_p_tek->nama : ''  ?>
-                                <td><?= $suko2_p_tek ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($sukosari_2['suko2_p_tek']['nama'])) {
+                                        echo $sukosari_2['suko2_p_tek']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($suko2_s_tek as $row) : ?>
+                            <?php foreach ($sukosari_2['suko2_s_tek'] as $row) : ?>
                                 <tr>
                                     <td>Staf Teknik</td>
                                     <td> : </td>
-                                    <?php $suko2_s_tek = isset($suko2_s_tek->nama)  ? $suko2_s_tek->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($sukosari_2['suko2_s_tek'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                         </tbody>
@@ -1701,10 +2303,10 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <!-- Modal amdk-->
-    <!-- <div class="modal fade" id="amdk" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="amdk" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-warning text-dark">
@@ -1719,63 +2321,141 @@
                             <tr>
                                 <td class="fw-bold">Manager</td>
                                 <td> : </td>
-                                <?php $amdk = isset($amdk->nama)  ? $amdk->nama : ''  ?>
-                                <td><?= $amdk ?></td>
+                                <td>
+
+                                    <?php
+                                    if (isset($amdk['amdk']['nama'])) {
+                                        echo $amdk['amdk']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold">Wakil Manager</td>
+                                <td> : </td>
+                                <td>
+
+                                    <?php
+                                    if (isset($amdk['amdk2']['nama'])) {
+                                        echo $amdk['amdk2']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="fw-bold">Quality Control</td>
                                 <td> : </td>
-                                <?php $amdk_qc = isset($amdk_qc->nama)  ? $amdk_qc->nama : ''  ?>
-                                <td><?= $amdk_qc ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($amdk['amdk_qc']['nama'])) {
+                                        echo $amdk['amdk_qc']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($amdk_s_qc as $row) : ?>
+                            <?php foreach ($amdk['amdk_s_qc'] as $row) : ?>
                                 <tr>
                                     <td>Staf Quality Control</td>
                                     <td> : </td>
-                                    <?php $amdk_s_qc = isset($amdk_s_qc->nama)  ? $amdk_s_qc->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($amdk['amdk_s_qc'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                             <tr>
                                 <td class="fw-bold">Kabag Produksi</td>
                                 <td> : </td>
-                                <?php $amdk_pro = isset($amdk_pro->nama)  ? $amdk_pro->nama : ''  ?>
-                                <td><?= $amdk_pro ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($amdk['amdk_pro']['nama'])) {
+                                        echo $amdk['amdk_pro']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($amdk_s_pro as $row) : ?>
+                            <?php foreach ($amdk['amdk_s_pro'] as $row) : ?>
                                 <tr>
                                     <td>Staf Produksi</td>
                                     <td> : </td>
-                                    <?php $amdk_s_pro = isset($amdk_s_pro->nama)  ? $amdk_s_pro->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($amdk['amdk_s_pro'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                             <tr>
                                 <td class="fw-bold">Kabag Administrasi dan Keu</td>
                                 <td> : </td>
-                                <?php $amdk_adm = isset($amdk_adm->nama)  ? $amdk_adm->nama : ''  ?>
-                                <td><?= $amdk_adm ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($amdk['amdk_adm']['nama'])) {
+                                        echo $amdk['amdk_adm']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($amdk_s_adm as $row) : ?>
+                            <?php foreach ($amdk['amdk_s_adm'] as $row) : ?>
                                 <tr>
                                     <td>Staf Administrasi</td>
                                     <td> : </td>
-                                    <?php $amdk_s_adm = isset($amdk_s_adm->nama)  ? $amdk_s_adm->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($amdk['amdk_s_adm'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                             <tr>
                                 <td class="fw-bold">Kabag Pemasaran</td>
                                 <td> : </td>
-                                <?php $amdk_pasar = isset($amdk_pasar->nama)  ? $amdk_pasar->nama : ''  ?>
-                                <td><?= $amdk_pasar ?></td>
+                                <td>
+                                    <?php
+                                    if (isset($amdk['amdk_pasar']['nama'])) {
+                                        echo $amdk['amdk_pasar']['nama'];
+                                    } else {
+                                        echo '';
+                                    }
+                                    ?>
+                                </td>
                             </tr>
-                            <?php foreach ($amdk_s_pasar as $row) : ?>
+                            <?php foreach ($amdk['amdk_s_pasar'] as $row) : ?>
                                 <tr>
                                     <td>Staf Pemasaran</td>
                                     <td> : </td>
-                                    <?php $amdk_s_pasar = isset($amdk_s_pasar->nama)  ? $amdk_s_pasar->nama : ''  ?>
-                                    <td><?= $row->nama ?></td>
+                                    <td>
+                                        <?php
+                                        if (isset($amdk['amdk_s_pasar'])) {
+                                            echo $row['nama'];
+                                        } else {
+                                            echo '';
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                             <?php endforeach;  ?>
                         </tbody>
@@ -1783,4 +2463,4 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
