@@ -16,6 +16,10 @@
                         <div class="sb-nav-link-icon"><i class="fa-fw fa fa-comments"></i></div>
                         <div style="font-size: 0.8rem;"> Pengaduan</div>
                     </a>
+                    <a class="nav-link" href="<?= base_url('arsip') ?>">
+                        <div class="sb-nav-link-icon"><i class="fas fa-file fa-fw"></i></div>
+                        <div style="font-size: 0.8rem;"> Data Arsip</div>
+                    </a>
                     <!-- <a class="nav-link" href="<?= base_url('user/admin') ?>">
                         <div class="sb-nav-link-icon"><i class="fa-fw fas fa-user"></i></div>
                         Data User
