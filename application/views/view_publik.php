@@ -475,7 +475,8 @@
                              <div class="carousel-item active">
                                  <!-- <img src="<?= base_url('assets/img/pdampopup.png') ?>" class="d-block w-100" alt="Gambar 1"> -->
                                  <!-- <img src="<?= base_url('assets/img/diskon_jan.png') ?>" class="d-block w-100" alt="Gambar 1"> -->
-                                 <img src="<?= base_url('assets/img/bumd_award.png') ?>" class="d-block w-100" alt="Gambar 1">
+                                 <!-- <img src="<?= base_url('assets/img/bumd_award.png') ?>" class="d-block w-100" alt="Gambar 1"> -->
+                                 <img src="<?= base_url('assets/img/diskonbaru.jpeg') ?>" class="d-block w-100" alt="Gambar 1">
                              </div>
                              <div class="carousel-item">
                                  <img src="<?= base_url('assets/img/pdampopup.png') ?>" class="d-block w-100" alt="Gambar 1">
