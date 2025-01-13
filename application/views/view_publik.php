@@ -452,6 +452,23 @@
                          </div>
                      </div><!-- End testimonial item -->
 
+                     <div class="swiper-slide">
+                         <div class="testimonial-wrap">
+                             <div class="testimonial-item">
+                                 <img src="assets/img/bumd_award.png" class="testimonial-img" alt="">
+                                 <h3>BUMD Award 2024</h3>
+                                 <ul>
+                                     <li>
+                                         Penghargaan kategori Top Pembina BUMD.
+                                     </li>
+                                     <li>
+                                         Penghargaan kategori Top CEO BUMD
+                                     </li>
+                                 </ul>
+                             </div>
+                         </div>
+                     </div><!-- End testimonial item -->
+
                  </div>
                  <div class="swiper-pagination"></div>
              </div>
@@ -476,7 +493,9 @@
                                  <!-- <img src="<?= base_url('assets/img/pdampopup.png') ?>" class="d-block w-100" alt="Gambar 1"> -->
                                  <!-- <img src="<?= base_url('assets/img/diskon_jan.png') ?>" class="d-block w-100" alt="Gambar 1"> -->
                                  <!-- <img src="<?= base_url('assets/img/bumd_award.png') ?>" class="d-block w-100" alt="Gambar 1"> -->
-                                 <img src="<?= base_url('assets/img/diskonbaru.jpeg') ?>" class="d-block w-100" alt="Gambar 1">
+                                 <!-- <img src="<?= base_url('assets/img/diskonbaru.jpeg') ?>" class="d-block w-100" alt="Gambar 1"> -->
+                                 <img src="<?= base_url('assets/img/diskon_jan25.jpg') ?>" class="d-block w-100" alt="Gambar 1">
+                                 <!-- <img src="<?= base_url('assets/img/info_pdam.jpeg') ?>" class="d-block w-100" alt="Gambar 1"> -->
                              </div>
                              <div class="carousel-item">
                                  <img src="<?= base_url('assets/img/pdampopup.png') ?>" class="d-block w-100" alt="Gambar 1">
