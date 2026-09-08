@@ -48,7 +48,7 @@
                             <i class="fas fa-clipboard-list fa-3x text-primary mb-3"></i>
                             <h5>Survey Kepuasan Pelanggan</h5>
                             <p class="text-muted mb-0">Bantu kami meningkatkan kualitas layanan dengan memberikan penilaian Anda.
-                                <br>Skala: <strong>1</strong> (Sangat Buruk) s/d <strong>5</strong> (Sangat Baik)
+                                <br>Skala: <strong>1</strong> (Tidak Baik) s/d <strong>4</strong> (Sangat Baik)
                             </p>
                         </div>
                     </div>
@@ -117,18 +117,17 @@
                         <div class="mb-3">
                             <label class="form-label fw-semibold"><?= $no ?>. <?= $row->pertanyaan ?></label>
                             <div class="row mt-2">
-                                <?php for ($i = 1; $i <= 5; $i++) : ?>
+                                <?php for ($i = 1; $i <= 4; $i++) : ?>
                                     <div class="col text-center">
-                                        <div class="form-check d-flex flex-column align-items-center justify-content-center p-2 rounded" style="background: <?= $i == 1 ? '#f8d7da' : ($i == 2 ? '#fff3cd' : ($i == 3 ? '#e9ecef' : ($i == 4 ? '#cff4fc' : '#d1e7dd'))) ?>; min-height: 90px;">
+                                        <div class="form-check d-flex flex-column align-items-center justify-content-center p-2 rounded" style="background: <?= $i == 1 ? '#f8d7da' : ($i == 2 ? '#fff3cd' : ($i == 3 ? '#cff4fc' : '#d1e7dd')) ?>; min-height: 90px;">
                                             <input class="form-check-input" type="radio" name="jawaban[<?= $row->id ?>]" value="<?= $i ?>" id="q<?= $row->id ?>_<?= $i ?>" required style="margin-bottom: 4px;">
                                             <label class="form-check-label fw-bold" for="q<?= $row->id ?>_<?= $i ?>" style="font-size:0.85rem; line-height:1.2;">
                                                 <?= $i ?><br>
                                                 <span class="fw-normal" style="font-size:0.7rem;">
                                                 <?php
-                                                if ($i == 1) echo 'Sangat<br>Buruk';
-                                                elseif ($i == 2) echo 'Buruk';
-                                                elseif ($i == 3) echo 'Cukup';
-                                                elseif ($i == 4) echo 'Baik';
+                                                if ($i == 1) echo 'Tidak<br>Baik';
+                                                elseif ($i == 2) echo 'Kurang<br>Baik';
+                                                elseif ($i == 3) echo 'Baik';
                                                 else echo 'Sangat<br>Baik';
                                                 ?>
                                                 </span>
@@ -142,6 +141,19 @@
                     <?php $no++;
                                 endforeach; ?>
                         </div> <!-- close last kategori card -->
+
+                        <!-- Saran & Masukan -->
+                        <h6 class="fw-bold text-primary mt-3 mb-2">
+                            <i class="fas fa-comment-dots me-1"></i> Saran & Masukan
+                        </h6>
+                        <div class="card bg-light border-0 mb-3">
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold">Saran dan masukan Anda untuk peningkatan kualitas layanan Perumdam Ijen Tirta:</label>
+                                    <textarea name="saran" class="form-control" rows="4" placeholder="Tulis saran dan masukan Anda di sini..."><?= set_value('saran') ?></textarea>
+                                </div>
+                            </div>
+                        </div>
 
                         <!-- Submit -->
                         <div class="text-center mt-4">
@@ -165,7 +177,7 @@
 <script>
     document.getElementById('formKuisioner').addEventListener('submit', function(e) {
         const radios = document.querySelectorAll('input[type="radio"]:checked');
-        const totalPertanyaan = document.querySelectorAll('input[type="radio"][required]').length / 5;
+        const totalPertanyaan = document.querySelectorAll('input[type="radio"][required]').length / 4;
         if (radios.length < totalPertanyaan) {
             e.preventDefault();
             alert('Mohon isi semua pertanyaan sebelum mengirim jawaban.');

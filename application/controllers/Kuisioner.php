@@ -32,7 +32,7 @@ class Kuisioner extends CI_Controller
         // Validasi setiap pertanyaan
         $pertanyaan = $this->Model_dashboard_baru->getAllPertanyaan();
         foreach ($pertanyaan as $p) {
-            $this->form_validation->set_rules('jawaban[' . $p->id . ']', $p->pertanyaan, 'required|numeric|in_list[1,2,3,4,5]');
+            $this->form_validation->set_rules('jawaban[' . $p->id . ']', $p->pertanyaan, 'required|numeric|in_list[1,2,3,4]');
         }
 
         if ($this->form_validation->run() == false) {
@@ -45,6 +45,7 @@ class Kuisioner extends CI_Controller
             $nama = $this->input->post('nama_pelanggan', true);
             $no_pel = $this->input->post('no_pel', true);
             $wilayah = $this->input->post('wilayah', true);
+            $saran = $this->input->post('saran', true);
 
             // Cek apakah no_pel sudah pernah mengisi kuisioner
             $sudah_ada = $this->db->where('no_pel', $no_pel)->count_all_results('kuisioner_jawaban');
@@ -65,6 +66,7 @@ class Kuisioner extends CI_Controller
                     'no_pel' => $no_pel,
                     'wilayah' => $wilayah,
                     'nilai' => $nilai,
+                    'saran' => $saran,
                     'created_at' => date('Y-m-d H:i:s')
                 ];
             }

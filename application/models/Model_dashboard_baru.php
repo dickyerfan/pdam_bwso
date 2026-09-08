@@ -99,13 +99,13 @@ class Model_dashboard_baru extends CI_Model
     // Daftar responden (unique by no_pel)
     public function getDaftarResponden()
     {
-        return $this->db->query("SELECT no_pel, nama_pelanggan, wilayah, AVG(nilai) as rata_rata, MIN(created_at) as tanggal FROM kuisioner_jawaban GROUP BY no_pel, nama_pelanggan, wilayah ORDER BY tanggal DESC")->result();
+        return $this->db->query("SELECT no_pel, nama_pelanggan, wilayah, AVG(nilai) as rata_rata, MIN(saran) as saran, MIN(created_at) as tanggal FROM kuisioner_jawaban GROUP BY no_pel, nama_pelanggan, wilayah ORDER BY tanggal DESC")->result();
     }
 
     // Detail jawaban per responden
     public function getDetailResponden($no_pel)
     {
-        $this->db->select('kj.no_pel, kj.nama_pelanggan, kj.wilayah, kj.created_at, kp.kategori, kp.pertanyaan, kj.nilai');
+        $this->db->select('kj.no_pel, kj.nama_pelanggan, kj.wilayah, kj.created_at, kj.saran, kp.kategori, kp.pertanyaan, kj.nilai');
         $this->db->from('kuisioner_jawaban kj');
         $this->db->join('kuisioner_pertanyaan kp', 'kp.id = kj.id_pertanyaan');
         $this->db->where('kj.no_pel', $no_pel);

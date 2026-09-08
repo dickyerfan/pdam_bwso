@@ -94,16 +94,12 @@
             font-size: 12px;
         }
 
-        .skor-5 {
+        .skor-4 {
             background: #198754;
         }
 
-        .skor-4 {
-            background: #0dcaf0;
-        }
-
         .skor-3 {
-            background: #6c757d;
+            background: #0dcaf0;
         }
 
         .skor-2 {
@@ -226,18 +222,17 @@
             </div>
             <div class="ringkasan-card">
                 <div class="angka"><?= $ikp_keseluruhan && $ikp_keseluruhan->rata_rata ? number_format($ikp_keseluruhan->rata_rata, 2) : '-' ?></div>
-                <div class="label">Rata-rata IKP (Skala 1-5)</div>
+                <div class="label">Rata-rata IKP (Skala 1-4)</div>
             </div>
             <div class="ringkasan-card">
                 <div class="angka">
                     <?php
                     if ($ikp_keseluruhan && $ikp_keseluruhan->rata_rata) {
                         $avg = $ikp_keseluruhan->rata_rata;
-                        if ($avg >= 4.5) echo 'Sangat Puas';
-                        elseif ($avg >= 3.5) echo 'Puas';
-                        elseif ($avg >= 2.5) echo 'Cukup';
-                        elseif ($avg >= 1.5) echo 'Kurang';
-                        else echo 'Sangat Kurang';
+                        if ($avg >= 3.5) echo 'Sangat Baik';
+                        elseif ($avg >= 2.5) echo 'Baik';
+                        elseif ($avg >= 1.5) echo 'Kurang Baik';
+                        else echo 'Tidak Baik';
                     } else echo '-';
                     ?>
                 </div>
@@ -271,11 +266,10 @@
                         <td class="text-center"><?= $row->total_responden ?></td>
                         <td>
                             <?php
-                            if ($row->rata_rata >= 4.5) echo 'Sangat Puas';
-                            elseif ($row->rata_rata >= 3.5) echo 'Puas';
-                            elseif ($row->rata_rata >= 2.5) echo 'Cukup';
-                            elseif ($row->rata_rata >= 1.5) echo 'Kurang';
-                            else echo 'Sangat Kurang';
+                            if ($row->rata_rata >= 3.5) echo 'Sangat Baik';
+                            elseif ($row->rata_rata >= 2.5) echo 'Baik';
+                            elseif ($row->rata_rata >= 1.5) echo 'Kurang Baik';
+                            else echo 'Tidak Baik';
                             ?>
                         </td>
                     </tr>
@@ -340,11 +334,10 @@
                             <td class="text-center"><?= $row->total ?></td>
                             <td>
                                 <?php
-                                if ($row->rata_rata >= 4.5) echo 'Sangat Puas';
-                                elseif ($row->rata_rata >= 3.5) echo 'Puas';
-                                elseif ($row->rata_rata >= 2.5) echo 'Cukup';
-                                elseif ($row->rata_rata >= 1.5) echo 'Kurang';
-                                else echo 'Sangat Kurang';
+                                if ($row->rata_rata >= 3.5) echo 'Sangat Baik';
+                                elseif ($row->rata_rata >= 2.5) echo 'Baik';
+                                elseif ($row->rata_rata >= 1.5) echo 'Kurang Baik';
+                                else echo 'Tidak Baik';
                                 ?>
                             </td>
                         </tr>
@@ -366,6 +359,7 @@
                         <th>Nama Pelanggan</th>
                         <th>Wilayah</th>
                         <th width="100" class="text-center">Skor</th>
+                        <th>Saran & Masukan</th>
                         <th width="120">Tanggal</th>
                     </tr>
                 </thead>
@@ -380,6 +374,7 @@
                             <td class="text-center">
                                 <span class="skor-box skor-<?= round($row->rata_rata) ?>"><?= number_format($row->rata_rata, 2) ?></span>
                             </td>
+                            <td><?= !empty($row->saran) ? htmlspecialchars($row->saran) : '-' ?></td>
                             <td><?= date('d/m/Y H:i', strtotime($row->tanggal)) ?></td>
                         </tr>
                     <?php endforeach; ?>

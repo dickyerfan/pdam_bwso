@@ -60,11 +60,10 @@
                                             <td class="text-center fw-bold fs-5"><?= $row->nilai ?></td>
                                             <td>
                                                 <?php
-                                                if ($row->nilai == 5) echo '<span class="text-success fw-bold">Sangat Baik</span>';
-                                                elseif ($row->nilai == 4) echo '<span class="text-success">Baik</span>';
-                                                elseif ($row->nilai == 3) echo '<span class="text-secondary">Cukup</span>';
-                                                elseif ($row->nilai == 2) echo '<span class="text-warning">Buruk</span>';
-                                                else echo '<span class="text-danger fw-bold">Sangat Buruk</span>';
+                                                if ($row->nilai == 4) echo '<span class="text-success fw-bold">Sangat Baik</span>';
+                                                elseif ($row->nilai == 3) echo '<span class="text-success">Baik</span>';
+                                                elseif ($row->nilai == 2) echo '<span class="text-warning">Kurang Baik</span>';
+                                                else echo '<span class="text-danger fw-bold">Tidak Baik</span>';
                                                 ?>
                                             </td>
                                         </tr>
@@ -74,6 +73,20 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Saran & Masukan -->
+                <?php if (!empty($detail[0]->saran)) : ?>
+                    <div class="card border-0 shadow-sm mt-4">
+                        <div class="card-header bg-white fw-bold">
+                            <i class="fas fa-comment-dots me-1"></i> Saran & Masukan
+                        </div>
+                        <div class="card-body">
+                            <div class="p-3 bg-light rounded">
+                                <?= nl2br(htmlspecialchars($detail[0]->saran)) ?>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
 
             <?php else : ?>
                 <div class="card border-0 shadow-sm">

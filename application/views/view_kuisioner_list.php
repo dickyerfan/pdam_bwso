@@ -47,11 +47,10 @@
                                             </td>
                                             <td>
                                                 <?php
-                                                if ($row->rata_rata >= 4.5) echo '<span class="text-success fw-bold">Sangat Puas</span>';
-                                                elseif ($row->rata_rata >= 3.5) echo '<span class="text-success">Puas</span>';
-                                                elseif ($row->rata_rata >= 2.5) echo '<span class="text-warning">Cukup</span>';
-                                                elseif ($row->rata_rata >= 1.5) echo '<span class="text-danger">Kurang</span>';
-                                                else echo '<span class="text-danger fw-bold">Sangat Kurang</span>';
+                                                if ($row->rata_rata >= 3.5) echo '<span class="text-success fw-bold">Sangat Baik</span>';
+                                                elseif ($row->rata_rata >= 2.5) echo '<span class="text-success">Baik</span>';
+                                                elseif ($row->rata_rata >= 1.5) echo '<span class="text-warning">Kurang Baik</span>';
+                                                else echo '<span class="text-danger fw-bold">Tidak Baik</span>';
                                                 ?>
                                             </td>
                                             <td class="text-nowrap"><?= date('d/m/Y H:i', strtotime($row->tanggal)) ?></td>

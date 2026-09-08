@@ -44,7 +44,7 @@
                                     <div class="text-white-50 small">IKP Keseluruhan</div>
                                     <div class="fs-3 fw-bold">
                                         <?php if ($ikp_keseluruhan && $ikp_keseluruhan->rata_rata) : ?>
-                                            <?= number_format($ikp_keseluruhan->rata_rata, 2) ?> / 5
+                                            <?= number_format($ikp_keseluruhan->rata_rata, 2) ?> / 4
                                         <?php else : ?>
                                             -
                                         <?php endif; ?>
@@ -208,11 +208,10 @@
                                                     <td class="text-center"><?= $row->total ?></td>
                                                     <td>
                                                         <?php
-                                                        if ($row->rata_rata >= 4.5) echo '<span class="text-success fw-bold">Sangat Puas</span>';
-                                                        elseif ($row->rata_rata >= 3.5) echo '<span class="text-success">Puas</span>';
-                                                        elseif ($row->rata_rata >= 2.5) echo '<span class="text-warning">Cukup</span>';
-                                                        elseif ($row->rata_rata >= 1.5) echo '<span class="text-danger">Kurang</span>';
-                                                        else echo '<span class="text-danger fw-bold">Sangat Kurang</span>';
+                                                        if ($row->rata_rata >= 3.5) echo '<span class="text-success fw-bold">Sangat Baik</span>';
+                                                        elseif ($row->rata_rata >= 2.5) echo '<span class="text-success">Baik</span>';
+                                                        elseif ($row->rata_rata >= 1.5) echo '<span class="text-warning">Kurang Baik</span>';
+                                                        else echo '<span class="text-danger fw-bold">Tidak Baik</span>';
                                                         ?>
                                                     </td>
                                                 </tr>
@@ -399,7 +398,7 @@
                     scales: {
                         r: {
                             beginAtZero: true,
-                            max: 5,
+                            max: 4,
                             ticks: {
                                 stepSize: 1
                             }
