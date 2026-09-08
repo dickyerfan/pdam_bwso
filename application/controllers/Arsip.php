@@ -6,6 +6,7 @@ class Arsip extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        date_default_timezone_set('Asia/Jakarta');
         $this->load->model('Model_arsip');
         $this->load->library('form_validation');
         if (!$this->session->userdata('nama_pengguna')) {
@@ -16,7 +17,7 @@ class Arsip extends CI_Controller
     public function index()
     {
         // URL API
-        $apiUrl = 'http://103.160.148.174/manager/Api_arsip';
+        $apiUrl = 'http://36.67.227.244/manager/Api_arsip';
 
         // Mengambil data dari API menggunakan file_get_contents
         $output = file_get_contents($apiUrl);
@@ -93,7 +94,7 @@ class Arsip extends CI_Controller
                 ];
 
                 // URL endpoint API Anda
-                $url = 'http://103.160.148.174/manager/Api_arsip/upload';
+                $url = 'http://36.67.227.244/manager/Api_arsip/upload';
 
                 // Inisialisasi cURL
                 $ch = curl_init();
@@ -169,7 +170,7 @@ class Arsip extends CI_Controller
     public function edit($id_arsip)
     {
         // URL API yang digunakan untuk mendapatkan data arsip berdasarkan ID
-        $apiUrl = 'http://103.160.148.174/manager/Api_arsip/edit/' . $id_arsip;
+        $apiUrl = 'http://36.67.227.244/manager/Api_arsip/edit/' . $id_arsip;
 
         // Gunakan file_get_contents untuk mendapatkan data dari API
         $response = @file_get_contents($apiUrl);
@@ -231,7 +232,7 @@ class Arsip extends CI_Controller
             'keterangan' => $this->input->post('keterangan')
         ];
 
-        $apiUrl = 'http://103.160.148.174/manager/Api_arsip/update/' . $id_arsip;
+        $apiUrl = 'http://36.67.227.244/manager/Api_arsip/update/' . $id_arsip;
 
         $options = [
             'http' => [
@@ -298,7 +299,7 @@ class Arsip extends CI_Controller
 
     public function baca($id_arsip)
     {
-        $url = 'http://103.160.148.174/manager/Api_arsip/baca/' . $id_arsip;
+        $url = 'http://36.67.227.244/manager/Api_arsip/baca/' . $id_arsip;
 
         $response = @file_get_contents($url);
 
@@ -313,7 +314,7 @@ class Arsip extends CI_Controller
 
     public function download($id_arsip)
     {
-        $url = 'http://103.160.148.174/manager/Api_arsip/download/' . $id_arsip;
+        $url = 'http://36.67.227.244/manager/Api_arsip/download/' . $id_arsip;
 
         $headers = get_headers($url, 1);
 
@@ -349,7 +350,7 @@ class Arsip extends CI_Controller
     public function detail($id_arsip)
     {
         $data['title'] = 'Data Detail Arsip';
-        $apiUrl = 'http://103.160.148.174/manager/Api_arsip/edit/' . $id_arsip;
+        $apiUrl = 'http://36.67.227.244/manager/Api_arsip/edit/' . $id_arsip;
         $response = @file_get_contents($apiUrl);
 
         if ($response === false) {

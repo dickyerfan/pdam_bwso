@@ -1,7 +1,7 @@
 <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('../assets/img/breadcrumbs-bg.jpg');">
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('../assets/img/kantor.png');">
         <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
             <h2>Info Pelanggan</h2>
             <ol>
@@ -32,7 +32,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group mb-1">
                                             <label for="" class="form-label">No Pelanggan :</label>
-                                            <input type="text" name="no_pel" class="form-control" value="<?= set_value('no_pel'); ?>">
+                                            <input type="text" name="no_pel" class="form-control" maxlength="8" placeholder="Masukkan 8 digit no pelanggan (contoh : 01000546)" value="<?= set_value('no_pel'); ?>">
                                             <?= form_error('no_pel', '<div class="text-danger">', '</div>'); ?>
 
                                         </div>
@@ -86,6 +86,7 @@
                                                 <option value="Wonosari">Wonosari</option>
                                                 <option value="Klabang">Klabang</option>
                                                 <option value="Sukosari 2">Sukosari 2</option>
+                                                <option value="Ijen Water">Ijen Water</option>
                                             </select>
                                             <?= form_error('wil_layanan', '<div class="text-danger">', '</div>'); ?>
                                         </div>

@@ -43,7 +43,7 @@ class Auth extends CI_Controller
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                         </button>
                       </div>');
-                        redirect('dashboard');
+                        redirect('dashboard_baru');
                     } else {
                         $data_session = [
                             'nama_pengguna' => $cek_nama_pengguna->nama_pengguna,
@@ -58,7 +58,7 @@ class Auth extends CI_Controller
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                         </button>
                       </div>');
-                        redirect('pengguna');
+                        redirect('dashboard_baru');
                     }
                 } else { //jika password salah
                     $this->session->set_flashdata('info', '<div class="alert alert-danger" role="alert">Login Gagal, Password Anda Salah.!</div>');
@@ -68,14 +68,14 @@ class Auth extends CI_Controller
                 $this->session->set_flashdata('info', '<div class="alert alert-danger" role="alert">Login Gagal, nama pengguna Anda Salah.!</div>');
                 redirect('auth');
             }
-            redirect('dashboard');
+            redirect('dashboard_baru');
         }
     }
 
     public function registrasi()
     {
         if ($this->session->userdata('nama_pengguna')) {
-            redirect('dashboard');
+            redirect('dashboard_baru');
         }
         $this->form_validation->set_rules('nama_pengguna', 'Nama Pengguna', 'required|trim|min_length[5]|is_unique[user.nama_pengguna]');
         $this->form_validation->set_rules('nama_lengkap', 'Nama Lengkap', 'required|trim');

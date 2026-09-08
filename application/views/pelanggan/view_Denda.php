@@ -1,7 +1,7 @@
 <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('../assets/img/breadcrumbs-bg.jpg');">
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('../assets/img/kantor.png');">
         <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
             <h2>Info Pelanggan</h2>
             <ol>
@@ -54,7 +54,7 @@
                             <tr>
                                 <th scope="row">4</th>
                                 <td>Sanksi denda Rp. 200.000</td>
-                                <td>Merubah kedudukan meter air dari tempat semula sehingga tidak sesuai dengan persyaratan teknis tanpa seijin PDAM</td>
+                                <td>Merubah kedudukan meter air dari tempat semula sehingga tidak sesuai dengan persyaratan teknis tanpa seijin Perumdam Ijen Tirta</td>
                             </tr>
                             <tr>
                                 <th scope="row">5</th>
@@ -81,13 +81,13 @@
                             </tr>
                             <tr>
                                 <th scope="row">9</th>
-                                <td>Sanksi akan dilaporkan kepada pihak yang berwajib dan denda sesuai dengan hasil analisa Tim teknis PDAM
+                                <td>Sanksi akan dilaporkan kepada pihak yang berwajib dan denda sesuai dengan hasil analisa Tim teknis Perumdam Ijen Tirta
                                 </td>
-                                <td>Pengambilan air dan atau penyambungan di luar meter air oleh masyarakat yang bukan pelanggan PDAM</td>
+                                <td>Pengambilan air dan atau penyambungan di luar meter air oleh masyarakat yang bukan pelanggan Perumdam Ijen Tirta</td>
                             </tr>
                             <tr>
                                 <th scope="row">10</th>
-                                <td>Sanksi biaya sesuai denagn ketentuan dan perhitungan PDAM
+                                <td>Sanksi biaya sesuai dengan ketentuan dan perhitungan Perumdam Ijen Tirta
                                 </td>
                                 <td>Segala kerusakan pipa air akibat kelalaian pekerjaan yang dilaksanakan oleh masyarakat dan atau instansi</td>
                             </tr>

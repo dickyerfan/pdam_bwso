@@ -3,7 +3,7 @@
     <div class="container-fluid px-4">
         <div class="d-flex align-items-center justify-content-between small">
             <!-- <div class="text-muted">Copyright &copy; DIE Art'S Production 2022</div> -->
-            <div class="text-muted">Built With <span class="text-danger">&hearts;</span> by DIE Art'S Production 2022</div>
+            <div class="text-muted">Built With <span class="text-danger">&hearts;</span> by DIE Art'S Production 2026</div>
         </div>
     </div>
 </footer>
@@ -33,9 +33,9 @@
 
 <script src="<?= base_url() ?>assets/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="<?= base_url() ?>assets/js/scripts.js"></script>
-<script src="<?= base_url() ?>assets/js/Chart.min.js" crossorigin="anonymous"></script>
-<script src="<?= base_url() ?>assets/demo/chart-area-demo.js"></script>
-<script src="<?= base_url() ?>assets/demo/chart-bar-demo.js"></script>
+<!-- <script src="<?= base_url() ?>assets/js/Chart.min.js" crossorigin="anonymous"></script> -->
+<!-- <script src="<?= base_url() ?>assets/demo/chart-area-demo.js"></script> -->
+<!-- <script src="<?= base_url() ?>assets/demo/chart-bar-demo.js"></script> -->
 <script src="<?= base_url() ?>assets/js/datatables-simple-demo.js"></script>
 
 <!-- datatable bootstrap5 -->

@@ -10,7 +10,14 @@
                      <p data-aos="fade-up">IJEN WATER di kenal memiliki kualitas air yang sangat baik dan kaya akan mineral yang diperlukan oleh tubuh. Air yang di ambil dari sumber mata air terbaik itu kemudian di proses dengan teknologi yang canggih dan steril untuk memastikan kebersihan dan kesegaran air sebelum di jual kepada masyarakat.</p>
                      <a data-aos="fade-up" data-aos-delay="200" href="#sejarah" class="btn-sejarah lengkap">Lihat
                          Selengkapnya</a>
-                     <a data-aos="fade-up" data-aos-delay="200" href="https://wa.me/6285338519245" target="_blank" style="text-decoration:none;" class="btn-sejarah">Silakan Order</a>
+                     <?php
+                        // Format untuk tampilan: 628xxx jadi 08xxx
+                        $no_display = $no_wa_ijen;
+                        if (substr($no_wa_ijen, 0, 2) === '62') {
+                            $no_display = '0' . substr($no_wa_ijen, 2);
+                        }
+                        ?>
+                     <a data-aos="fade-up" data-aos-delay="200" href="https://wa.me/<?= $no_wa_ijen ?>" target="_blank" style="text-decoration:none;" class="btn-sejarah">Silakan Order</a>
                  </div>
              </div>
          </div>
@@ -18,7 +25,7 @@
 
      <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
 
-         <div class="carousel-item active" style="background-image: url(assets/img/ijenWater/mobil.png)">
+         <div class="carousel-item active" style="background-image: url(assets/img/ijenwater.png)">
          </div>
          <!-- <div class="carousel-item" style="background-image: url(assets/img/ijenWater/carousel2.jpg)"></div>
          <div class="carousel-item" style="background-image: url(assets/img/ijenWater/carousel3.jpg)"></div>
@@ -72,183 +79,52 @@
                  <div class="col-lg-5 d-flex flex-column justify-content-center">
                      <h3>Produk - produk Ijen Water</h3>
 
-                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
-                         <i class="bi bi-patch-check flex-shrink-0"></i>
-                         <div>
-                             <h4><a href="#!" class="stretched-link" data-bs-toggle="modal" data-bs-target="#gelas">Kemasan Gelas 220ml</a></h4>
-                         </div>
-                     </div><!-- End Icon Box -->
-
-                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="200">
-                         <i class="bi bi-patch-check flex-shrink-0"></i>
-                         <div>
-                             <h4><a href="#!" class="stretched-link" data-bs-toggle="modal" data-bs-target="#botol1">Kemasan Botol 330ml</a></h4>
-                         </div>
-                     </div><!-- End Icon Box -->
-
-                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="300">
-                         <i class="bi bi-patch-check flex-shrink-0"></i>
-                         <div>
-                             <h4><a href="#!" class="stretched-link" data-bs-toggle="modal" data-bs-target="#botol2">Kemasan Botol 500ml</a></h4>
-                         </div>
-                     </div><!-- End Icon Box -->
-
-                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="400">
-                         <i class="bi bi-patch-check flex-shrink-0"></i>
-                         <div>
-                             <h4><a href="#!" class="stretched-link" data-bs-toggle="modal" data-bs-target="#botol3">Kemasan Botol 1500ml</a></h4>
-                         </div>
-                     </div><!-- End Icon Box -->
-
-                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="500">
-                         <i class="bi bi-patch-check flex-shrink-0"></i>
-                         <div>
-                             <h4><a href="#!" class="stretched-link" data-bs-toggle="modal" data-bs-target="#galon">Kemasan Galon 19 liter</a></h4>
-                         </div>
-                     </div><!-- End Icon Box -->
+                     <?php if (!empty($produk_list)) : ?>
+                         <?php foreach ($produk_list as $index => $row) : ?>
+                             <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="<?= ($index + 1) * 100 ?>">
+                                 <i class="bi bi-patch-check flex-shrink-0"></i>
+                                 <div>
+                                     <h4><a href="#!" class="stretched-link" data-bs-toggle="modal" data-bs-target="#<?= $row->modal_id ?>"><?= $row->nama_produk ?></a></h4>
+                                 </div>
+                             </div>
+                         <?php endforeach; ?>
+                     <?php endif; ?>
 
                  </div>
              </div>
 
          </div>
      </section><!-- End Produk Section -->
-     <!-- Modal 220 ml -->
-     <div class="modal fade" id="gelas" tabindex="-1" aria-labelledby="bwsLabel" aria-hidden="true">
-         <div class="modal-dialog  modal-lg">
-             <div class="modal-content">
-                 <div class="modal-header">
-                     <h5 class="modal-title" id="bwsLabel">Kemasan Gelas 220ml</h5>
-                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                 </div>
-                 <div class="modal-body">
-                     <div class="row">
-                         <div class="col-lg-6">
-                             <img src="<?= base_url('assets/img/ijenWater/gelas.png') ?>" alt="gelas220ml" class="img-fluid">
+
+     <!-- Modal Dynamic Produk -->
+     <?php if (!empty($produk_list)) : ?>
+         <?php foreach ($produk_list as $row) : ?>
+             <div class="modal fade" id="<?= $row->modal_id ?>" tabindex="-1" aria-labelledby="<?= $row->modal_id ?>Label" aria-hidden="true">
+                 <div class="modal-dialog modal-lg">
+                     <div class="modal-content">
+                         <div class="modal-header">
+                             <h5 class="modal-title" id="<?= $row->modal_id ?>Label"><?= $row->nama_produk ?></h5>
+                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                          </div>
-                         <div class="col-lg-6 p-4">
-                             <h6>
-                                 Air Mineral Ijen Water kemasan gelas 220ml <br> dalam 1 dus berisi 48pcs
-                             </h6>
-                             <br>
-                             <h6>
-                                 Harga Eceran tertinggi <br>
-                                 Rp. 15.000,-
-                             </h6>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
-     <!-- Modal 330 ml -->
-     <div class="modal fade" id="botol1" tabindex="-1" aria-labelledby="bwsLabel" aria-hidden="true">
-         <div class="modal-dialog  modal-lg">
-             <div class="modal-content">
-                 <div class="modal-header">
-                     <h5 class="modal-title" id="bwsLabel">Kemasan Botol 330ml</h5>
-                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                 </div>
-                 <div class="modal-body">
-                     <div class="row">
-                         <div class="col-lg-6">
-                             <img src="<?= base_url('assets/img/ijenWater/330.png') ?>" alt="gelas220ml" class="img-fluid">
-                         </div>
-                         <div class="col-lg-6 p-4">
-                             <h6>
-                                 Air Mineral Ijen Water kemasan botol 330ml <br> dalam 1 dus berisi 24pcs
-                             </h6>
-                             <br>
-                             <h6>
-                                 Harga Eceran tertinggi <br>
-                                 Rp. 33.000,-
-                             </h6>
+                         <div class="modal-body">
+                             <div class="row">
+                                 <div class="col-lg-6">
+                                     <?php if ($row->gambar) : ?>
+                                         <img src="<?= base_url('assets/img/ijenWater/' . $row->gambar) ?>" alt="<?= $row->nama_produk ?>" class="img-fluid">
+                                     <?php endif; ?>
+                                 </div>
+                                 <div class="col-lg-6 p-4">
+                                     <h6><?= $row->deskripsi ?></h6>
+                                     <br>
+                                     <h6>Harga Eceran tertinggi<br><?= $row->harga ?></h6>
+                                 </div>
+                             </div>
                          </div>
                      </div>
                  </div>
              </div>
-         </div>
-     </div>
-     <!-- Modal 500 ml -->
-     <div class="modal fade" id="botol2" tabindex="-1" aria-labelledby="bwsLabel" aria-hidden="true">
-         <div class="modal-dialog  modal-lg">
-             <div class="modal-content">
-                 <div class="modal-header">
-                     <h5 class="modal-title" id="bwsLabel">Kemasan Botol 500ml</h5>
-                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                 </div>
-                 <div class="modal-body">
-                     <div class="row">
-                         <div class="col-lg-6">
-                             <img src="<?= base_url('assets/img/ijenWater/500.png') ?>" alt="gelas220ml" class="img-fluid">
-                         </div>
-                         <div class="col-lg-6">
-                             <h6>
-                                 Air Mineral Ijen Water kemasan botol 500ml <br> dalam 1 dus berisi 24pcs
-                             </h6>
-                             <h6>
-                                 Harga Eceran tertinggi <br>
-                                 Rp. 35.000,-
-                             </h6>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
-     <!-- Modal 1500 ml -->
-     <div class="modal fade" id="botol3" tabindex="-1" aria-labelledby="bwsLabel" aria-hidden="true">
-         <div class="modal-dialog  modal-lg">
-             <div class="modal-content">
-                 <div class="modal-header">
-                     <h5 class="modal-title" id="bwsLabel">Kemasan Botol 1500ml</h5>
-                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                 </div>
-                 <div class="modal-body">
-                     <div class="row">
-                         <div class="col-lg-6">
-                             <img src="<?= base_url('assets/img/ijenWater/1500.png') ?>" alt="gelas220ml" class="img-fluid">
-                         </div>
-                         <div class="col-lg-6 p-4">
-                             <h6>
-                                 Air Mineral Ijen Water kemasan botol 1500ml <br> dalam 1 dus berisi 12pcs
-                             </h6>
-                             <h6>
-                                 Harga Eceran tertinggi <br>
-                                 Rp. 38.000,-
-                             </h6>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
-     <!-- Modal galon -->
-     <div class="modal fade" id="galon" tabindex="-1" aria-labelledby="bwsLabel" aria-hidden="true">
-         <div class="modal-dialog  modal-lg">
-             <div class="modal-content">
-                 <div class="modal-header">
-                     <h5 class="modal-title" id="bwsLabel">Kemasan Galon 19 liter</h5>
-                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                 </div>
-                 <div class="modal-body">
-                     <div class="row">
-                         <div class="col-lg-6">
-                             <img src="<?= base_url('assets/img/ijenWater/galon.png') ?>" alt="gelas220ml" class="img-fluid">
-                         </div>
-                         <div class="col-lg-6 p-4">
-                             <h6>
-                                 Air Mineral Ijen Water kemasan galon 19liter
-                             </h6>
-                             <h6>
-                                 Harga Eceran tertinggi <br>
-                                 Rp. 11.000,-
-                             </h6>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
+         <?php endforeach; ?>
+     <?php endif; ?>
 
      <!-- ======= Galeri Section ======= -->
      <section id="galeri" class="galeri">
@@ -413,39 +289,43 @@
                      <div class="info-item  d-flex flex-column justify-content-center align-items-center">
                          <i class="bi bi-telephone"></i>
                          <h3>Pemesanan :</h3>
-                         <a href="https://wa.me/6285338519245" target="_blank" style="text-decoration:none; color:#52565e;">+62853-3851-9245</a>
-                         <!-- <p>+62823-1638-4231</p> -->
+                         <?php if ($no_wa_ijen) : ?>
+                             <a href="https://wa.me/<?= $no_wa_ijen ?>" target="_blank" style="text-decoration:none; color:#52565e;"><?= $no_display ?></a>
+                         <?php else : ?>
+                             <p>-</p>
+                         <?php endif; ?>
                      </div>
-                 </div><!-- End Info Item -->
+                 </div>
+             </div><!-- End Info Item -->
 
-             </div>
+         </div>
 
-             <div class="row gy-4 mt-1">
+         <div class="row gy-4 mt-1">
 
-                 <div class="col-lg-6 ">
-                     <!-- <iframe src="https://goo.gl/maps/nNXm4XscSQqcz3z26" frameborder="0"
+             <div class="col-lg-6 ">
+                 <!-- <iframe src="https://goo.gl/maps/nNXm4XscSQqcz3z26" frameborder="0"
           style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe> -->
-                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.6191188948856!2d113.8134776507582!3d-7.934787907717636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd6c2e149d64cb9%3A0x9356649086292771!2sKantor%20PDAM%20Bondowoso!5e0!3m2!1sid!2sid!4v1687395183080!5m2!1sid!2sid" width="100%" height="275px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                 </div><!-- End Google Maps -->
+                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.6191188948856!2d113.8134776507582!3d-7.934787907717636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd6c2e149d64cb9%3A0x9356649086292771!2sKantor%20PDAM%20Bondowoso!5e0!3m2!1sid!2sid!4v1687395183080!5m2!1sid!2sid" width="100%" height="275px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+             </div><!-- End Google Maps -->
 
-                 <div class="col-lg-6">
-                     <div class="info-item d-flex flex-column justify-content-center py-5 px-4">
-                         <h5><span class="bi bi-clock text-warning"> </span> Jam Pelayanan :</h5><br>
-                         <p>
-                             Senin - Jum'at : 7.00 - 15.00 WIB
-                         </p>
-                         <br>
-                         <p>
-                             Sabtu - Ahad : Kantor Tutup
-                         </p>
-                         <br>
-                         <p class="pb-1">
-                             Namun layanan pengiriman air mineral Ijen Water masih tetap berlanjut dan beroperasi.
-                         </p>
-                     </div>
-                 </div><!-- End Contact Form -->
+             <div class="col-lg-6">
+                 <div class="info-item d-flex flex-column justify-content-center py-5 px-4">
+                     <h5><span class="bi bi-clock text-warning"> </span> Jam Pelayanan :</h5><br>
+                     <p>
+                         Senin - Jum'at : 7.00 - 15.00 WIB
+                     </p>
+                     <br>
+                     <p>
+                         Sabtu - Ahad : Kantor Tutup
+                     </p>
+                     <br>
+                     <p class="pb-1">
+                         Namun layanan pengiriman air mineral Ijen Water masih tetap berlanjut dan beroperasi.
+                     </p>
+                 </div>
+             </div><!-- End Contact Form -->
 
-             </div>
+         </div>
 
          </div>
      </section><!-- End Contact Section -->

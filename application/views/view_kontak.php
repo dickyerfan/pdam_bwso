@@ -31,6 +31,7 @@
                     <div class="info-item d-flex flex-column justify-content-center align-items-center">
                         <i class="bi bi-envelope"></i>
                         <h3>Email Us</h3>
+                        <p>perumdamijentirta@gmail.com</p>
                         <p>pdambondowoso@gmail.com</p>
                     </div>
                 </div><!-- End Info Item -->
@@ -74,29 +75,29 @@
                 </div> -->
                 <div class="col-lg-6">
                     <div class="info-item  d-flex flex-column justify-content-center">
-                        <h4 class="text-center" style="color:#feb900 ;">Sosial Media PDAM Bondowoso</h4>
+                        <h4 class="text-center" style="color:#feb900 ;">Sosial Media Perundam Ijen Tirta</h4>
                         <div class="icon-box d-flex position-relative">
                             <i class="bi bi-instagram flex-shrink-0 ms-5"></i>
                             <div class="ms-4">
-                                <h5><a href="https://www.instagram.com/pdam_bondowoso" target="_blank" class="stretched-link">Instagram PDAM Bondowoso</a></h5>
+                                <h5><a href="https://www.instagram.com/perumdamijentirta" target="_blank" class="stretched-link">Instagram Perumdam Ijen Tirta</a></h5>
                             </div>
                         </div>
                         <div class="icon-box d-flex position-relative">
                             <i class="bi bi-facebook flex-shrink-0 ms-5"></i>
                             <div class="ms-4">
-                                <h5><a href="https://www.facebook.com/pdambondowosoijenwater" target="_blank" class="stretched-link">Facebook PDAM Bondowoso</a></h5>
+                                <h5><a href="https://www.facebook.com/pdambondowosoijenwater" target="_blank" class="stretched-link">Facebook Perumdam Ijen Tirta</a></h5>
                             </div>
                         </div>
                         <div class="icon-box d-flex position-relative">
                             <i class="bi bi-youtube flex-shrink-0 ms-5"></i>
                             <div class="ms-4">
-                                <h5><a href="https://www.youtube.com/@infopdambondowoso" target="_blank" class="stretched-link">Youtube PDAM Bondowoso</a></h5>
+                                <h5><a href="https://www.youtube.com/@infopdambondowoso" target="_blank" class="stretched-link">Youtube Perumdam Ijen Tirta</a></h5>
                             </div>
                         </div>
                         <div class="icon-box d-flex position-relative">
                             <i class="bi bi-tiktok flex-shrink-0 ms-5"></i>
                             <div class="ms-4">
-                                <h5><a href="https://www.tiktok.com/@pdam.bondowoso" target="_blank" class="stretched-link">Tiktok PDAM Bondowoso</a></h5>
+                                <h5><a href="https://www.tiktok.com/@pdam.bondowoso" target="_blank" class="stretched-link">Tiktok Perumdam Ijen Tirta</a></h5>
                             </div>
                         </div>
                         <div class="icon-box d-flex position-relative">

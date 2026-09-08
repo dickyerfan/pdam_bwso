@@ -10,7 +10,7 @@
     <title>App | <?= $title ?></title>
 
     <!-- Favicons -->
-    <link href="<?= base_url() ?>assets/img/logo.png" rel="icon">
+    <link href="<?= base_url() ?>assets/img/tirta.png" rel="icon">
 
     <link href="<?= base_url() ?>assets/css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -48,14 +48,16 @@
     <div class="container py-5">
         <div class="row bg-white justify-content-center p-5 shadow rounded">
             <div class="col-lg-6">
-                <h2 class="display-1 fs-2 text-primary text-center title">PDAM Bondowoso</h2>
+                <h2 class="display-1 fs-2 text-primary text-center title">Perumdam Ijen Tirta Bondowoso</h2>
                 <p class="display-1 fs-6 text-center text-primary">Silakan login untuk masuk ke halaman Admin</p>
-                <img src="<?= base_url('assets/img/hero-carousel/hero5.jpg') ?>" class="img-fluid  gambar" style="height: 380px;">
+                <img src="<?= base_url('assets/img/hero5.png') ?>" class="img-fluid  gambar" style="height: 380px;">
             </div>
             <div class="col-lg-6">
                 <div class="card shadow">
                     <div class="card-body text-center">
-                        <img src="<?= base_url('assets/img/logo.png') ?>" class="card-img-top mt-2" alt="Logo Pdam" style="width:20% ;">
+                        <div class="d-inline-block mt-2" style="width: 80px; height: 80px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: 3px solid #0d6efd;">
+                            <img src="<?= base_url('assets/img/tirta.png') ?>" alt="Logo Perumdam" style="width: 60px;">
+                        </div>
                         <h2 class="text-primary mt-4 display-6">Silakan <?= strtoupper($title); ?></h2>
                         <?= $this->session->flashdata('info'); ?>
                         <?= $this->session->unset_userdata('info'); ?>
@@ -85,9 +87,7 @@
         </div>
     </div>
 
-    <script src="<?= base_url() ?>/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="<?= base_url() ?>/js/scripts.js"></script>
-    <script src="<?= base_url() ?>/js/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="<?= base_url() ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

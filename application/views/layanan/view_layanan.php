@@ -18,13 +18,13 @@
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
             <div class="row justify-content-around gy-4">
-                <h3>Cakupan Layanan PDAM Bondowoso</h3>
+                <h3>Cakupan Layanan Perumdam Ijen Tirta</h3>
                 <div class="col-lg-6 flex-column justify-content-center layanan">
                     <p>
-                        Dalam perjalanannya hingga pada akhir tahun 2022 PDAM Bondowoso dapat melayani 18 kecamatan dari 23 kecamatan di Kabupaten Bondowoso. <br> <br> Secara garis besar daerah operasional PDAM Kabupaten Bondowoso dibagi menjadi 14 Unit Pelayanan Kecamatan (UPK) <br><br>
+                        Dalam perjalanannya hingga saat ini Perumdam Ijen Tirta Bondowoso dapat melayani 18 kecamatan dari 23 kecamatan di Kabupaten Bondowoso. <br> <br> Secara garis besar daerah operasional PDAM Kabupaten Bondowoso dibagi menjadi 14 Unit Pelayanan Kecamatan (UPK) <br><br>
                     </p>
                     <p>
-                        Jumlah pelanggan / SR (Sambungan Rumah) pada akhir tahun 2022 sebesar 19.937 pelanggan, dengan total sambungan rumah tersebut, maka cakupan pelayanan Administratif sampai akhir tahun 2022 mencapai 7,13 % dari total jumlah penduduk Kabupaten Bondowoso sebesar 802.864 jiwa
+                        Jumlah pelanggan / SR (Sambungan Rumah) sampai saat ini 19 ribuan pelanggan, dengan total sambungan rumah tersebut, maka cakupan pelayanan Administratif sampai akhir tahun 2025 mencapai 7,13 % dari total jumlah penduduk Kabupaten Bondowoso sebesar 802.864 jiwa
                     </p>
                 </div>
                 <div class="col-lg-3 d-flex flex-column justify-content-center">

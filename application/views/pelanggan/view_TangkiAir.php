@@ -1,7 +1,7 @@
 <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('../assets/img/breadcrumbs-bg.jpg');">
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('../assets/img/kantor.png');">
         <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
             <h2>Info Pelanggan</h2>
             <ol>
@@ -24,53 +24,71 @@
                         <div>
                             <h4><a href="#!" class="stretched-link">PENJUALAN TANGKI AIR 4000 Liter</a></h4>
                         </div>
-                    </div><!-- End Icon Box -->
+                    </div>
 
                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="200">
                         <div>
-                            <h4><a href="#!" class="stretched-link">PDAM memberikan pelayanan dengan truk tangki untuk keperluan Sosial, Umum dan Bisnis</a></h4>
+                            <h4><a href="#!" class="stretched-link">Perumdam Ijen Tirta memberikan pelayanan dengan truk tangki untuk keperluan Sosial, Umum dan Bisnis</a></h4>
                         </div>
-                    </div><!-- End Icon Box -->
+                    </div>
 
                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="400">
                         <div>
                             <h4><a href="#!" class="stretched-link">Caranya cukup Mudah :</a></h4>
                         </div>
-                    </div><!-- End Icon Box -->
+                    </div>
 
                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="500">
                         <i class="bi bi-patch-check flex-shrink-0"></i>
                         <div>
-                            <h4><a href="#!" class="stretched-link">Pesan air melalui Kantor PDAM Bondowoso atau menghubungi No kontak yang tertera</a></h4>
+                            <h4><a href="#!" class="stretched-link">Pesan air dengan datang ke Kantor Perumdam Ijen Tirta Bondowoso atau menghubungi No kontak yang tertera</a></h4>
                         </div>
-                    </div><!-- End Icon Box -->
+                    </div>
 
                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="600">
                         <i class="bi bi-patch-check flex-shrink-0"></i>
                         <div>
                             <h4><a href="#!" class="stretched-link">Membayar sesuai tarif yang dikenakan</a></h4>
                         </div>
-                    </div><!-- End Icon Box -->
+                    </div>
 
                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="700">
                         <i class="bi bi-patch-check flex-shrink-0"></i>
                         <div>
                             <h4><a href="#!" class="stretched-link">Petugas mengirim sesuai dengan alamat pemesanan</a></h4>
                         </div>
-                    </div><!-- End Icon Box -->
-                    <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="700">
+                    </div>
+
+                    <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="800">
                         <i class="bi bi-patch-check flex-shrink-0"></i>
                         <div>
-                            <h4><a href="#!" class="stretched-link"> Kontak Person : <br>
-                                    082316384231 (Bpk. MADE) <br>
-                                    085228134138 (Bpk. ANGGA)</a>
+                            <h4>
+                                Kontak Person :<br>
+                                <?php if (!empty($kontak)) : ?>
+                                    <?php foreach ($kontak as $row) : ?>
+                                        <?php
+                                        $wa_number = $row->no_hp;
+                                        if (substr($wa_number, 0, 1) === '0') {
+                                            $wa_number = '62' . substr($wa_number, 1);
+                                        }
+                                        ?>
+                                        <div style="display: flex; align-items: center; gap: 8px;">
+                                            <span><?= $row->no_hp ?> (<?= $row->nama ?>)</span>
+                                            <a href="https://wa.me/<?= $wa_number ?>" target="_blank" title="Chat WhatsApp">
+                                                <i class="bi bi-whatsapp" style="color: #25D366; font-size: 18px;"></i>
+                                            </a>
+                                        </div>
+                                    <?php endforeach; ?>
+                                <?php else : ?>
+                                    -
+                                <?php endif; ?>
                             </h4>
                         </div>
-                    </div><!-- End Icon Box -->
+                    </div>
 
-                </div><!-- End Info Item -->
+                </div>
                 <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="<?= base_url('assets/img/tangki.jpg') ?>" alt="logo Pdam" class="img-fluid d-flex ">
+                    <img src="<?= base_url('assets/img/tangki.jpg') ?>" alt="Tangki Air" class="img-fluid d-flex ">
                     <div class="row mt-2">
                         <div class="col-lg-12">
                             <table class="table table-bordered">
@@ -80,19 +98,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Kegiatan Sosial</td>
-                                        <td>Rp. 275.000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Kegiatan Umum Masyarakat</td>
-                                        <td>Rp. 300.000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Kegiatan Bisnis / Perdagangan</td>
-                                        <td>Rp. 350.000</td>
-                                    </tr>
-
+                                    <?php if (!empty($tarif)) : ?>
+                                        <?php foreach ($tarif as $row) : ?>
+                                            <tr>
+                                                <td><?= $row->nama_tarif ?></td>
+                                                <td><?= $row->harga ?></td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    <?php else : ?>
+                                        <tr>
+                                            <td colspan="2" class="text-center">-</td>
+                                        </tr>
+                                    <?php endif; ?>
                                 </tbody>
                             </table>
                         </div>
@@ -100,6 +117,6 @@
                 </div>
             </div>
         </div>
-    </section><!-- End Contact Section -->
+    </section>
 
-</main><!-- End #main -->
+</main>

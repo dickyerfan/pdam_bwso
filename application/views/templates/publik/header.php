@@ -5,12 +5,12 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>PDAM Bondowoso</title>
+    <title>Perumdam Ijen Tirta Bondowoso</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="<?= base_url() ?>assets/img/logo.png" rel="icon">
+    <link href="<?= base_url() ?>assets/img/tirta.png" rel="icon">
     <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
 
     <!-- Google Fonts -->
@@ -27,7 +27,37 @@
     <link href="<?= base_url() ?>assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="<?= base_url() ?>assets/css/main.css" rel="stylesheet">
+    <link href="<?= base_url() ?>assets/css/main.css?v=2" rel="stylesheet">
+
+    <style>
+        .arrow-transform {
+            background: linear-gradient(135deg, #ffc107, #ff9800);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .arrow-transform i {
+            font-size: 28px;
+            color: #fff;
+            transition: transform 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            .arrow-transform {
+                display: none !important;
+            }
+
+            .motto-badge {
+                font-size: 0.85rem;
+                padding: 6px 14px !important;
+            }
+        }
+    </style>
 
     <!-- =======================================================
   * Template Name: UpConstruction - v1.3.0
@@ -44,9 +74,10 @@
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
             <a href="<?= base_url('publik') ?>" class="logo d-flex align-items-center">
-                <!-- Uncomment the line below if you also wish to use an image logo -->
-                <img src="<?= base_url() ?>assets/img/logo.png" alt="Logo Pdam">
-                <h6 style="padding-top: 6px; color: aliceblue;">Perusahaan Daerah Air Minum <br>Kabupaten Bondowoso</h6>
+                <div style="background-color:#ffffff;border-radius:50%;padding:4px;width:46px;height:46px;display:flex;align-items:center;justify-content:center;margin-right:10px;">
+                    <img src="<?= base_url() ?>assets/img/tirta.png" alt="Logo Perumdam" style="width:38px;">
+                </div>
+                <h6 style="padding-top: 6px; color: aliceblue;">Perumdam <br>IJEN TIRTA <br>Bondowoso</h6>
             </a>
 
             <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
@@ -58,9 +89,10 @@
                         <ul>
                             <li><a href="<?= base_url('publik'); ?>#sejarah">Sejarah</a></li>
                             <li><a href="<?= base_url('publik'); ?>#visimisi">Visi Misi</a></li>
+                            <li><a href="<?= base_url('publik'); ?>#maknalogo">Makna Logo</a></li>
                             <li><a href="<?= base_url('publik'); ?>#dakum">Dasar Hukum</a></li>
                             <li><a href="<?= base_url('publik'); ?>#struktur">Struktur Organisasi</a></li>
-                            <li><a href="<?= base_url('publik'); ?>#tupoksi">Tugas Pokok & Fungsi</a></li>
+                            <li><a href="<?= base_url('publik'); ?>#budayakerja">Budaya Kerja</a></li>
                             <li><a href="<?= base_url('publik'); ?>#penghargaan">Penghargaan</a></li>
                         </ul>
                     </li>
@@ -80,7 +112,9 @@
                             <li><a href="<?= base_url('pelanggan/tangkiAir') ?>">Layanan Tangki Air</a></li>
                             <li><a href="<?= base_url('pelanggan/gantiNama') ?>">Layanan Ganti Nama</a></li>
                             <li><a href="<?= base_url('pelanggan/denda') ?>">Denda / Pelanggaran</a></li>
-                            <li><a href="<?= base_url('pelanggan/pengaduanPelanggan') ?>">Pengaduan Pelanggan</a></li>
+                            <li><a href="<?= base_url('pelanggan/pengaduanPelanggan') ?>">Pengaduan Online</a></li>
+                            <li><a href="<?= base_url('pelanggan/noPengaduanUPK') ?>">No Pengaduan UPK</a></li>
+                            <li><a href="<?= base_url('kuisioner') ?>">Kuisioner Kepuasan</a></li>
                         </ul>
                     </li>
                     <li><a href="<?= base_url('kontak') ?>">Kontak</a></li>

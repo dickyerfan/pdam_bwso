@@ -1,7 +1,7 @@
 <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('../assets/img/breadcrumbs-bg.jpg');">
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('../assets/img/kantor.png');">
         <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
             <h2>Info Pelanggan</h2>
             <ol>
@@ -18,21 +18,21 @@
         <div class="container mb-5" data-aos="fade-up" data-aos-delay="100">
             <div class="row justify-content-around gy-4">
                 <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="<?= base_url('assets/img/baliknama.png') ?>" alt="logo Pdam" class="img-fluid d-flex logoAtas">
+                    <img src="<?= base_url('assets/img/baliknama.jpg') ?>" alt="logo Pdam" class="img-fluid d-flex logoAtas">
                 </div>
                 <div class="col-lg-7 d-flex flex-column justify-content-center">
                     <h3>Prosedur Balik Nama Pelanggan</h3>
                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
                         <i class="bi bi-patch-check flex-shrink-0"></i>
                         <div>
-                            <h4><a href="#!" class="stretched-link">Pelanggan PDAM Bondowoso dengan membawa surat permohonan pergantian balik nama, Fotokopi KTP dan Rekening Bulan terakhir pembayaran</a></h4>
+                            <h4><a href="#!" class="stretched-link">Pelanggan Perumdam Ijen Tirta Bondowoso dengan membawa surat permohonan pergantian balik nama, Fotokopi KTP dan Rekening Bulan terakhir pembayaran</a></h4>
                         </div>
                     </div><!-- End Icon Box -->
 
                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="200">
                         <i class="bi bi-patch-check flex-shrink-0"></i>
                         <div>
-                            <h4><a href="#!" class="stretched-link">Datang ke Kantor PDAM Pusat Atau Kantor UPK Terdekat</a></h4>
+                            <h4><a href="#!" class="stretched-link">Datang ke Kantor Perumdam Ijen Tirta Pusat Atau Kantor UPK Terdekat</a></h4>
                         </div>
                     </div><!-- End Icon Box -->
 

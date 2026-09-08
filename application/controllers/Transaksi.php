@@ -7,6 +7,7 @@ class Transaksi extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        date_default_timezone_set('Asia/Jakarta');
         $this->load->model('model_transaksi');
         $this->load->library('form_validation');
         if ($this->session->userdata('level') != 'Admin') {

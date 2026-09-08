@@ -19,7 +19,7 @@
             <div class="row justify-content-around gy-4">
                 <div class="col-lg-8 d-flex flex-column justify-content-center">
                     <!-- <h3>Belum ada Data <?= $title ?></h3> -->
-                    <h3>Penyebab Kebocoran Pipa PDAM</h3>
+                    <h3>Penyebab Kebocoran Pipa Perumdam Ijen Tirta</h3>
                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
                         <i class="bi bi-patch-check flex-shrink-0"></i>
                         <div>
@@ -30,21 +30,21 @@
                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="200">
                         <i class="bi bi-patch-check flex-shrink-0"></i>
                         <div>
-                            <h4><a href="#!" class="stretched-link"><strong>Tekanan air yang tinggi:</strong> <br> Tekanan air yang tinggi dalam sistem pipa PDAM dapat menyebabkan pipa menjadi tegang dan rentan terhadap kebocoran. Saat tekanan air berlebih, pipa dapat retak atau mengalami kegagalan struktural.</a></h4>
+                            <h4><a href="#!" class="stretched-link"><strong>Tekanan air yang tinggi:</strong> <br> Tekanan air yang tinggi dalam sistem pipa Perumdam Ijen Tirta dapat menyebabkan pipa menjadi tegang dan rentan terhadap kebocoran. Saat tekanan air berlebih, pipa dapat retak atau mengalami kegagalan struktural.</a></h4>
                         </div>
                     </div><!-- End Icon Box -->
 
                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="300">
                         <i class="bi bi-patch-check flex-shrink-0"></i>
                         <div>
-                            <h4><a href="#!" class="stretched-link"><strong>Kerusakan fisik:</strong> <br> Pipa PDAM dapat mengalami kerusakan fisik akibat aktivitas manusia atau alam, seperti penggalian tanah yang tidak hati-hati, tumbukan benda berat, atau kegiatan konstruksi di sekitarnya. Kerusakan fisik dapat merusak integritas pipa dan menyebabkan kebocoran.</a></h4>
+                            <h4><a href="#!" class="stretched-link"><strong>Kerusakan fisik:</strong> <br> Pipa Perumdam Ijen Tirta dapat mengalami kerusakan fisik akibat aktivitas manusia atau alam, seperti penggalian tanah yang tidak hati-hati, tumbukan benda berat, atau kegiatan konstruksi di sekitarnya. Kerusakan fisik dapat merusak integritas pipa dan menyebabkan kebocoran.</a></h4>
                         </div>
                     </div><!-- End Icon Box -->
 
                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="400">
                         <i class="bi bi-patch-check flex-shrink-0"></i>
                         <div>
-                            <h4><a href="#!" class="stretched-link"><strong>Perubahan suhu dan kelembaban:</strong> <br> Fluktuasi suhu dan kelembaban ekstrem dapat menyebabkan pipa PDAM mengalami perubahan dimensi. Perubahan ini bisa mengakibatkan tegangan pada pipa dan menyebabkan kebocoran.</a></h4>
+                            <h4><a href="#!" class="stretched-link"><strong>Perubahan suhu dan kelembaban:</strong> <br> Fluktuasi suhu dan kelembaban ekstrem dapat menyebabkan pipa Perumdam Ijen Tirta mengalami perubahan dimensi. Perubahan ini bisa mengakibatkan tegangan pada pipa dan menyebabkan kebocoran.</a></h4>
                         </div>
                     </div><!-- End Icon Box -->
 
@@ -58,17 +58,19 @@
                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="600">
                         <i class="bi bi-patch-check flex-shrink-0"></i>
                         <div>
-                            <h4><a href="#!" class="stretched-link"><strong>Erosi tanah:</strong> <br> Perubahan dalam struktur tanah di sekitar pipa, seperti erosi, tanah longsor, atau penurunan tanah yang tidak merata, dapat menyebabkan pipa PDAM menjadi tegang dan berpotensi bocor.</a></h4>
+                            <h4><a href="#!" class="stretched-link"><strong>Erosi tanah:</strong> <br> Perubahan dalam struktur tanah di sekitar pipa, seperti erosi, tanah longsor, atau penurunan tanah yang tidak merata, dapat menyebabkan pipa Perumdam Ijen Tirta menjadi tegang dan berpotensi bocor.</a></h4>
                         </div>
                     </div><!-- End Icon Box -->
                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="700">
                         <i class="bi bi-patch-check flex-shrink-0"></i>
                         <div>
-                            <h4><a href="#!" class="stretched-link"><strong>Tindakan vandalisme:</strong> <br> Tindakan vandalisme seperti sabotase, pemotongan pipa, atau pencurian material pipa juga dapat menyebabkan kebocoran pada sistem PDAM.</a></h4>
+                            <h4><a href="#!" class="stretched-link"><strong>Tindakan vandalisme:</strong> <br> Tindakan vandalisme seperti sabotase, pemotongan pipa, atau pencurian material pipa juga dapat menyebabkan kebocoran pada sistem Perumdam Ijen Tirta.</a></h4>
                         </div>
                     </div><!-- End Icon Box -->
                 </div><!-- End Info Item -->
-                <div class="col-lg-4"></div>
+                <div class="col-lg-4 d-flex align-items-center justify-content-center">
+                    <img src="<?= base_url('assets/img/tirta.png') ?>" alt="Logo Perumdam Ijen Tirta" class="img-fluid" style="max-width: 450px;">
+                </div>
             </div>
         </div>
 

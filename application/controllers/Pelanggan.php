@@ -7,6 +7,8 @@ class Pelanggan extends CI_Controller
     {
         parent::__construct();
         $this->load->model('model_dashboard');
+        $this->load->model('model_upk');
+        $this->load->model('model_tangki');
         $this->load->library('form_validation');
     }
 
@@ -37,15 +39,18 @@ class Pelanggan extends CI_Controller
     public function pengaduanPelanggan()
     {
         
-        $this->form_validation->set_rules('no_pel', 'No Pelanggan', 'required|trim|numeric');
+        $this->form_validation->set_rules('no_pel', 'No Pelanggan', 'required|trim|numeric|exact_length[8]');
         $this->form_validation->set_rules('nama_pel', 'Nama Pelanggan', 'required|trim');
         $this->form_validation->set_rules('alamat', 'Alamat', 'required|trim');
         $this->form_validation->set_rules('no_tel', 'No Telepon', 'required|trim|numeric');
         $this->form_validation->set_rules('jenis_aduan', 'Jenis Pengaduan', 'required|trim');
         $this->form_validation->set_rules('wil_layanan', 'Wilayah Pelayanan', 'required|trim');
         $this->form_validation->set_rules('isi_aduan', 'Isi Pengaduan', 'required|trim');
-        $this->form_validation->set_message('required', '%s harus di isi');
-        $this->form_validation->set_message('numeric', '%s harus di isi angka');
+        $this->form_validation->set_message('required', '{field} wajib diisi');
+        $this->form_validation->set_message('numeric', '{field} harus berupa angka');
+        $this->form_validation->set_message('exact_length', '{field} harus tepat {param} digit');
+        $this->form_validation->set_message('min_length', '{field} minimal {param} digit');
+        $this->form_validation->set_message('max_length', '{field} maksimal {param} digit');
 
         if ($this->form_validation->run() == false) {
             $data['title'] = 'Pengaduan Pelanggan';
@@ -99,6 +104,8 @@ class Pelanggan extends CI_Controller
     public function tangkiAir()
     {
         $data['title'] = 'Tangki Air';
+        $data['kontak'] = $this->model_tangki->getAllKontak();
+        $data['tarif'] = $this->model_tangki->getAllTarif();
         $this->load->view('templates/publik/header', $data);
         $this->load->view('pelanggan/view_TangkiAir', $data);
         $this->load->view('templates/publik/footer');
@@ -109,6 +116,15 @@ class Pelanggan extends CI_Controller
         $data['title'] = 'Prosedur Ganti Nama';
         $this->load->view('templates/publik/header', $data);
         $this->load->view('pelanggan/view_GantiNama', $data);
+        $this->load->view('templates/publik/footer');
+    }
+
+    public function noPengaduanUPK()
+    {
+        $data['title'] = 'No Pengaduan UPK';
+        $data['upk'] = $this->model_upk->getAllUpk();
+        $this->load->view('templates/publik/header', $data);
+        $this->load->view('pelanggan/view_NoPengaduanUPK', $data);
         $this->load->view('templates/publik/footer');
     }
 }

@@ -18,7 +18,7 @@
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
             <div class="row justify-content-around gy-4">
-                <h3>Info Pelayanan PDAM Bondowoso</h3>
+                <h3>Info Pelayanan Perumdam Ijen Tirta</h3>
                 <div class="col-lg-6 d-flex flex-column justify-content-center">
                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
                         <i class="bi bi-buildings flex-shrink-0"></i>

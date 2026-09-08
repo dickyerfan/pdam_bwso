@@ -1034,7 +1034,7 @@ section {
 .visiMisi .img-bg {
 	background-size: cover;
 	background-position: center;
-	min-height: 400px;
+	border-radius: 10px;
 }
 
 .visiMisi h3 {
@@ -1044,17 +1044,6 @@ section {
 	margin-bottom: 20px;
 	padding-bottom: 20px;
 	position: relative;
-}
-
-.visiMisi h3:after {
-	content: "";
-	position: absolute;
-	display: block;
-	width: 340px;
-	height: 2px;
-	background: var(--color-primary);
-	left: 0;
-	bottom: 0;
 }
 
 .visiMisi p {
@@ -1118,6 +1107,36 @@ p {
 	font-size: 12px;
 	margin-top: -10px;
 	margin-bottom: -10px;
+}
+
+/*--------------------------------------------------------------
+# Sejarah Section Icon Box
+--------------------------------------------------------------*/
+.sejarah .icon-box {
+	margin-top: 25px;
+}
+
+.sejarah .icon-box i {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--color-primary);
+	margin-right: 25px;
+	font-size: 28px;
+	transition: 0.3s;
+	flex-shrink: 0;
+}
+
+.sejarah .icon-box:hover i {
+	color: #ffc732;
+}
+
+.sejarah .icon-box p {
+	font-size: 15px;
+	font-weight: 400;
+	margin-bottom: 0;
+	line-height: 28px;
+	padding-left: 10px;
 }
 
 .visiMisi .sk {
@@ -1426,7 +1445,7 @@ p {
 --------------------------------------------------------------*/
 .footer {
 	color: #fff;
-	background: url("../img/footer-bg1.jpg") top center no-repeat;
+	background: url("../img/kantor.png") top center no-repeat;
 	background-size: cover;
 	font-size: 14px;
 	padding: 80px 0 60px 0;

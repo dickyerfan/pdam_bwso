@@ -1,7 +1,7 @@
 <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('../assets/img/breadcrumbs-bg.jpg');">
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('../assets/img/kantor.png');">
         <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
             <h2>Info Pelanggan</h2>
             <ol>
@@ -18,7 +18,7 @@
         <div class="container mb-5" data-aos="fade-up" data-aos-delay="100">
             <div class="row justify-content-around gy-4">
                 <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="<?= base_url('assets/img/srbaru.png') ?>" alt="logo Pdam" class="img-fluid d-flex logoAtas" style="margin-top:50px;">
+                    <img src="<?= base_url('assets/img/pasangbarupor.png') ?>" alt="logo Perumdam" class="img-fluid d-flex logoAtas" style="margin-top:50px;">
                 </div>
                 <div class="col-lg-7 d-flex flex-column justify-content-center">
                     <!-- <h3>Belum ada Data <?= $title ?></h3> -->
@@ -40,7 +40,7 @@
                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="300">
                         <i class="bi bi-patch-check flex-shrink-0"></i>
                         <div>
-                            <h4><a href="#!" class="stretched-link">Petugas Teknik PDAM melakukan survey ke lokasi dan membuat Rencana Anggaran Belanja</a></h4>
+                            <h4><a href="#!" class="stretched-link">Petugas Teknik Perumdam Ijen Tirta melakukan survey ke lokasi dan membuat Rencana Anggaran Belanja</a></h4>
                         </div>
                     </div><!-- End Icon Box -->
 
@@ -75,7 +75,7 @@
                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="800">
                         <i class="bi bi-patch-check flex-shrink-0"></i>
                         <div>
-                            <h4><a href="#!" class="stretched-link">Air PDAM siap digunakan di rumah anda</a></h4>
+                            <h4><a href="#!" class="stretched-link">Air Perumdam siap digunakan di rumah anda</a></h4>
                         </div>
                     </div><!-- End Icon Box -->
                 </div><!-- End Info Item -->
@@ -96,21 +96,21 @@
                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="200">
                         <i class="bi bi-patch-check flex-shrink-0"></i>
                         <div>
-                            <h4><a href="#!" class="stretched-link">Jika dikemudian hari timbul sengketa mengenai kepemilikan persil maupun bangunan hingga mengakibatkan pipa-pipa harus dibongkar, maka hal ini diluar tanggung jawab PDAM dan pelanggan tidak menuntut kerugian apapun juga kepada PDAM</a></h4>
+                            <h4><a href="#!" class="stretched-link">Jika dikemudian hari timbul sengketa mengenai kepemilikan persil maupun bangunan hingga mengakibatkan pipa-pipa harus dibongkar, maka hal ini diluar tanggung jawab Perumdam Ijen Tirta dan pelanggan tidak menuntut kerugian apapun juga kepada Perumdam Ijen Tirta</a></h4>
                         </div>
                     </div><!-- End Icon Box -->
 
                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="300">
                         <i class="bi bi-patch-check flex-shrink-0"></i>
                         <div>
-                            <h4><a href="#!" class="stretched-link">Setuju dan tidak akan menggugat instalasi SR yang dipasang dari pipa dinas dengan meteran air yang pelanggan biayai menjadi milik PDAM dan PDAM bertanggung jawab memeliharanya</a></h4>
+                            <h4><a href="#!" class="stretched-link">Setuju dan tidak akan menggugat instalasi SR yang dipasang dari pipa dinas dengan meteran air yang pelanggan biayai menjadi milik Perumdam Ijen Tirta dan Perumdam Ijen Tirta bertanggung jawab memeliharanya</a></h4>
                         </div>
                     </div><!-- End Icon Box -->
 
                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="400">
                         <i class="bi bi-patch-check flex-shrink-0"></i>
                         <div>
-                            <h4><a href="#!" class="stretched-link">Memberi ijin kepada petugas PDAM memasuki tempat/halaman bangunan untuk memeriksa instalasi air atau memeriksa meter, mengadakan pemutusan saluran air apabila terjadi pelanggaran terhadap peraturan PDAM atau kelalaian kewajiban pembayaran rekening air</a></h4>
+                            <h4><a href="#!" class="stretched-link">Memberi ijin kepada petugas Perumdam Ijen Tirta memasuki tempat/halaman bangunan untuk memeriksa instalasi air atau memeriksa meter, mengadakan pemutusan saluran air apabila terjadi pelanggaran terhadap peraturan Perumdam Ijen Tirta atau kelalaian kewajiban pembayaran rekening air</a></h4>
                         </div>
                     </div><!-- End Icon Box -->
 
@@ -124,21 +124,21 @@
                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="600">
                         <i class="bi bi-patch-check flex-shrink-0"></i>
                         <div>
-                            <h4><a href="#!" class="stretched-link">Tidak akan menuntut apabila pelayanan air tidakmencapai 24 jam / hari yang disebabkan tekanan air pada saat itu memang tidak memungkinkan</a></h4>
+                            <h4><a href="#!" class="stretched-link">Tidak akan menuntut apabila pelayanan air tidak mencapai 24 jam / hari yang disebabkan tekanan air pada saat itu memang tidak memungkinkan</a></h4>
                         </div>
                     </div><!-- End Icon Box -->
 
                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="700">
                         <i class="bi bi-patch-check flex-shrink-0"></i>
                         <div>
-                            <h4><a href="#!" class="stretched-link">Bersedia mematuhi segala peraturan-peraturan yang ditetapkan / diberlakukan PDAM Kabupaten Bondowoso</a></h4>
+                            <h4><a href="#!" class="stretched-link">Bersedia mematuhi segala peraturan-peraturan yang ditetapkan / diberlakukan Perumdam Ijen Tirta Kabupaten Bondowoso</a></h4>
                         </div>
                     </div><!-- End Icon Box -->
 
                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="800">
                         <i class="bi bi-patch-check flex-shrink-0"></i>
                         <div>
-                            <h4><a href="#!" class="stretched-link">Apabila setelah menjadi pelanggan, kami melanggar aturan-aturan yang telah ditetapkan oleh PDAM, yang menyebabkan SR dicabut maka kami tidak akan menuntut apapun kepada pihak PDAM</a></h4>
+                            <h4><a href="#!" class="stretched-link">Apabila setelah menjadi pelanggan, kami melanggar aturan-aturan yang telah ditetapkan oleh Perumdam Ijen Tirta, yang menyebabkan SR dicabut maka kami tidak akan menuntut apapun kepada pihak Perumdam Ijen Tirta</a></h4>
                         </div>
                     </div><!-- End Icon Box -->
 
@@ -155,7 +155,7 @@
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="row justify-content-around gy-4">
                 <div class="col-lg-4">
-                    <img src="<?= base_url('assets/img/logo.png') ?>" alt="logo Pdam" class="img-fluid d-flex logo" style="margin-top:100px; width:350px;">
+                    <img src="<?= base_url('assets/img/tirta.png') ?>" alt="logo Perumdam" class="img-fluid d-flex logo" style="margin-top:100px; width:350px;">
                 </div>
                 <div class="col-lg-7 d-flex flex-column justify-content-center">
                     <h3>Ketentuan Pelanggan :</h3>
@@ -190,14 +190,14 @@
                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="500">
                         <i class="bi bi-patch-check flex-shrink-0"></i>
                         <div>
-                            <h4><a href="#!" class="stretched-link">Pelanggan dilarang Melakukan tindakan yang mengakibatkan meter air tidak dapat dibaca oleh petugas</a></h4>
+                            <h4><a href="#!" class="stretched-link">Pelanggan dilarang Melakukan tindakan yang mengakibatkan meter air tidak dapat dibaca oleh petugas Perumdam Ijen Tirta</a></h4>
                         </div>
                     </div><!-- End Icon Box -->
 
                     <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="600">
                         <i class="bi bi-patch-check flex-shrink-0"></i>
                         <div>
-                            <h4><a href="#!" class="stretched-link">Pelanggan dilarang Melakukan perbuatan lain yang merugikan Perusahaan</a></h4>
+                            <h4><a href="#!" class="stretched-link">Pelanggan dilarang Melakukan perbuatan lain yang merugikan Perumdam Ijen Tirta</a></h4>
                         </div>
                     </div><!-- End Icon Box -->
 

@@ -18,13 +18,13 @@
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
             <div class="row justify-content-around gy-4">
-                <h3>Sumber Air Baku PDAM Bondowoso</h3>
+                <h3>Sumber Air Baku Perumdam Ijen Tirta</h3>
                 <div class="col-lg-6 flex-column justify-content-center layanan">
                     <p>
-                        Sampai dengan tahun 2022 sumber air baku yang digunakan PDAM Kabupaten Bondowoso berasal dari beberapa Sumur Bor (SB) Dan Mata Air Gravitasi (MAG) dengan rincian sebagai berikut : <br> SB 1 A.Yani, SB 2 Jl.Mastrip, SB 4 Nangkaan, SB 6 Pancoran, SB 7 Unibo, SB 10 Penambangan, SB Poncogati, SB EDC, SB Ground, SB Wijayakusuma, SB Curahdami, SB Tegalampel 1, SB Tegalampel 2, SB Karang Anyar, SB Locare,SB Tamanan, SB Taman Krocok, Sb Prajekan,SB Tenggarang, SB Bataan, MAG Sumberbalen, MAG Sumber Suco, MAG Tegaljati 2, MAG Wringin, MAG Mangli, MAG Sumberwringin <br><br>
+                        Sampai saat ini sumber air baku yang digunakan Perumdam Ijen Tirta Bondowoso berasal dari beberapa Sumur Bor (SB) Dan Mata Air Gravitasi (MAG) dengan rincian sebagai berikut : <br> SB 1 A.Yani, SB 2 Jl.Mastrip, SB 4 Nangkaan, SB 6 Pancoran, SB 7 Unibo, SB 10 Penambangan, SB Poncogati, SB EDC, SB Ground, SB Wijayakusuma, SB Curahdami, SB Tegalampel 1, SB Tegalampel 2, SB Karang Anyar, SB Locare,SB Tamanan, SB Taman Krocok, Sb Prajekan,SB Tenggarang, SB Bataan, MAG Sumberbalen, MAG Sumber Suco, MAG Tegaljati 2, MAG Wringin, MAG Mangli, MAG Sumberwringin <br><br>
                     </p>
                     <p>
-                        Sistem transmisi dan distribusi dilakukan secara gravitasi dan perpompaan. Pada saat ini untuk sistim gravitasi dan perpompaan baik pada musim hujan maupun musim kemarau pelayanan sistim transmisi dan distribusi dilaksanakan selama 24 jam.
+                        Sistem transmisi dan distribusi dilakukan secara gravitasi dan perpompaan. Pada saat ini untuk sistim gravitasi dan perpompaan baik pada musim hujan maupun musim kemarau pelayanan sistim transmisi dan distribusi dilaksanakan selama hampir 24 jam.
                     </p>
                 </div>
                 <div class="col-lg-3 d-flex flex-column justify-content-center">

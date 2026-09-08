@@ -6,7 +6,9 @@ class Layanan extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        date_default_timezone_set('Asia/Jakarta');
         $this->load->model('model_dashboard');
+        $this->load->model('model_kapasitas');
         $this->load->library('form_validation');
     }
 
@@ -54,6 +56,18 @@ class Layanan extends CI_Controller
     public function kapasitasProduksi()
     {
         $data['title'] = 'Kapasitas Produksi';
+        $data['upk_list'] = $this->model_kapasitas->getUpkWithDetail();
+        
+        // Ambil tanggal update terakhir dari detail
+        $this->db->select_max('updated_at');
+        $max_date = $this->db->get('kapasitas_detail')->row();
+        $data['update_terakhir'] = '';
+        if ($max_date && $max_date->updated_at) {
+            $bulan = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+            $timestamp = strtotime($max_date->updated_at);
+            $data['update_terakhir'] = $bulan[(int)date('m', $timestamp) - 1] . ' ' . date('Y', $timestamp);
+        }
+        
         $this->load->view('templates/publik/header', $data);
         $this->load->view('layanan/view_KapasitasProduksi', $data);
         $this->load->view('templates/publik/footer');

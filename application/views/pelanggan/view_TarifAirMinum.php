@@ -1,7 +1,7 @@
 <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/breadcrumbs-bg.jpg');">
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/kantor.png');">
         <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
             <h2>Info Pelanggan</h2>
             <ol>
@@ -19,7 +19,7 @@
             <div class="row gy-4">
                 <div class="text-center">
                     <h4>Struktur Tarif Air Minum</h4>
-                    <h4>Perusahaan Daerah Air Minum Bondowoso</h4>
+                    <h4>Perumdam Ijen Tirta Bondowoso</h4>
                 </div>
                 <div class="text-end">
                     <div class="row justify-content-end">
