@@ -80,22 +80,30 @@ class Kuisioner extends CI_Controller
 
     public function rekap()
     {
+        $dari = $this->input->get('dari', true);
+        $sampai = $this->input->get('sampai', true);
+        $mode = $this->input->get('mode', true);
+
+        if ($mode == 'periode' && $dari && $sampai) {
+            $data['ikm'] = $this->Model_dashboard_baru->hitungIKMPeriode($dari, $sampai);
+            $data['ikm_per_wilayah'] = $this->Model_dashboard_baru->getIKMPerWilayahPeriode($dari, $sampai);
+            $data['responden'] = $this->Model_dashboard_baru->getDaftarResponden($dari, $sampai);
+            $data['rata_per_pertanyaan'] = $this->Model_dashboard_baru->getRataPerPertanyaan($dari, $sampai);
+            $data['filter_dari'] = $dari;
+            $data['filter_sampai'] = $sampai;
+            $data['mode'] = 'periode';
+        } else {
+            $data['ikm'] = $this->Model_dashboard_baru->hitungIKMKeseluruhan();
+            $data['ikm_per_wilayah'] = $this->Model_dashboard_baru->getIKMPerWilayahKeseluruhan();
+            $data['responden'] = $this->Model_dashboard_baru->getDaftarResponden();
+            $data['rata_per_pertanyaan'] = $this->Model_dashboard_baru->getRataPerPertanyaan();
+            $data['filter_dari'] = '';
+            $data['filter_sampai'] = '';
+            $data['mode'] = 'keseluruhan';
+        }
+
         $data['title'] = 'Rekap Hasil Kuisioner Kepuasan Pelanggan';
-        $data['pertanyaan'] = $this->Model_dashboard_baru->getAllPertanyaan();
-        $data['responden'] = $this->Model_dashboard_baru->getDaftarResponden();
-        $data['ikp_kategori'] = $this->Model_dashboard_baru->getIKPPerKategori();
-        $data['ikp_keseluruhan'] = $this->Model_dashboard_baru->getIKPKeseluruhan();
-        $data['ikp_wilayah'] = $this->Model_dashboard_baru->getIKPPerWilayah();
-        $data['total_responden'] = $this->Model_dashboard_baru->getTotalResponden();
-
-        // Rata-rata per pertanyaan
-        $this->db->select('kp.id, kp.kategori, kp.pertanyaan, AVG(kj.nilai) as rata_rata, COUNT(kj.nilai) as jumlah');
-        $this->db->from('kuisioner_jawaban kj');
-        $this->db->join('kuisioner_pertanyaan kp', 'kp.id = kj.id_pertanyaan');
-        $this->db->group_by('kp.id, kp.kategori, kp.pertanyaan');
-        $this->db->order_by('kp.urutan', 'ASC');
-        $data['rata_per_pertanyaan'] = $this->db->get()->result();
-
+        $data['tanggal_awal'] = $this->Model_dashboard_baru->getTanggalAwalData();
         $this->load->view('kuisioner/view_rekap_print', $data);
     }
 }

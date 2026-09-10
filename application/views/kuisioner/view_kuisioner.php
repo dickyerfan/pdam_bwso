@@ -70,7 +70,7 @@
                                     </div>
                                     <div class="col-md-4 mb-2">
                                         <label class="form-label">No Pelanggan (8 digit) <span class="text-danger">*</span></label>
-                                        <input type="text" name="no_pel" class="form-control" maxlength="8" pattern="[0-9]{8}" placeholder="Contoh: 12345678" value="<?= set_value('no_pel') ?>" required>
+                                        <input type="text" name="no_pel" class="form-control" maxlength="8" pattern="[0-9]{8}" placeholder="Contoh: 01003567 untuk UPK Bondowoso" value="<?= set_value('no_pel') ?>" required>
                                     </div>
                                     <div class="col-md-4 mb-2">
                                         <label class="form-label">Wilayah Pelayanan <span class="text-danger">*</span></label>
@@ -124,12 +124,12 @@
                                             <label class="form-check-label fw-bold" for="q<?= $row->id ?>_<?= $i ?>" style="font-size:0.85rem; line-height:1.2;">
                                                 <?= $i ?><br>
                                                 <span class="fw-normal" style="font-size:0.7rem;">
-                                                <?php
-                                                if ($i == 1) echo 'Tidak<br>Baik';
-                                                elseif ($i == 2) echo 'Kurang<br>Baik';
-                                                elseif ($i == 3) echo 'Baik';
-                                                else echo 'Sangat<br>Baik';
-                                                ?>
+                                                    <?php
+                                                    if ($i == 1) echo 'Tidak<br>Baik';
+                                                    elseif ($i == 2) echo 'Kurang<br>Baik';
+                                                    elseif ($i == 3) echo 'Baik';
+                                                    else echo 'Sangat<br>Baik';
+                                                    ?>
                                                 </span>
                                             </label>
                                         </div>

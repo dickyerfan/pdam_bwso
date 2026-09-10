@@ -61,26 +61,6 @@ class Model_dashboard_baru extends CI_Model
         return $this->db->insert_batch('kuisioner_jawaban', $data);
     }
 
-    // Hitung IKP (Indeks Kepuasan Pelanggan) per kategori
-    public function getIKPPerKategori()
-    {
-        return $this->db->query("SELECT kp.kategori, AVG(kj.nilai) as rata_rata, COUNT(DISTINCT kj.no_pel) as total_responden FROM kuisioner_jawaban kj JOIN kuisioner_pertanyaan kp ON kp.id = kj.id_pertanyaan GROUP BY kp.kategori")->result();
-    }
-
-    // Hitung IKP keseluruhan
-    public function getIKPKeseluruhan()
-    {
-        $this->db->select('AVG(nilai) as rata_rata, COUNT(DISTINCT no_pel) as total_responden');
-        $this->db->from('kuisioner_jawaban');
-        return $this->db->get()->row();
-    }
-
-    // IKP per wilayah
-    public function getIKPPerWilayah()
-    {
-        return $this->db->query("SELECT wilayah, AVG(nilai) as rata_rata, COUNT(DISTINCT no_pel) as total FROM kuisioner_jawaban WHERE wilayah IS NOT NULL GROUP BY wilayah ORDER BY rata_rata DESC")->result();
-    }
-
     // Total responden kuisioner (unik berdasarkan no_pel)
     public function getTotalResponden()
     {
@@ -90,16 +70,185 @@ class Model_dashboard_baru extends CI_Model
         return $row ? $row->total : 0;
     }
 
-    // Jawaban per pertanyaan (untuk grafik)
-    public function getJawabanPerPertanyaan()
+    // ==================== HITUNG IKM (PermenPANRB No.14/2017) ====================
+
+    private function getJumlahKategori()
     {
-        return $this->db->query("SELECT kp.pertanyaan, kj.nilai, COUNT(*) as jumlah FROM kuisioner_jawaban kj JOIN kuisioner_pertanyaan kp ON kp.id = kj.id_pertanyaan GROUP BY kp.pertanyaan, kj.nilai ORDER BY kp.urutan, kj.nilai")->result();
+        $result = $this->db->query("SELECT COUNT(DISTINCT kategori) as jumlah FROM kuisioner_pertanyaan WHERE aktif='1'")->row();
+        return $result ? $result->jumlah : 1;
+    }
+
+    private function getBobot()
+    {
+        return 1 / $this->getJumlahKategori();
+    }
+
+    private function getKeteranganIKM($nilai_konversi)
+    {
+        if ($nilai_konversi >= 88.31) return ['mutu' => 'A', 'keterangan' => 'Sangat Baik', 'kinerja' => 'Sangat Baik'];
+        if ($nilai_konversi >= 76.61) return ['mutu' => 'B', 'keterangan' => 'Baik', 'kinerja' => 'Baik'];
+        if ($nilai_konversi >= 65.00) return ['mutu' => 'C', 'keterangan' => 'Kurang Baik', 'kinerja' => 'Kurang Baik'];
+        return ['mutu' => 'D', 'keterangan' => 'Tidak Baik', 'kinerja' => 'Tidak Baik'];
+    }
+
+    private function hitungIKMDariData($data_kategori)
+    {
+        $jumlah_kategori = count($data_kategori);
+        if ($jumlah_kategori == 0) return null;
+
+        $bobot = 1 / $jumlah_kategori;
+        $skor_tertimbang_total = 0;
+        $hasil_per_kategori = [];
+
+        foreach ($data_kategori as $row) {
+            $rata_rata = floatval($row->rata_rata);
+            $skor_tertimbang = $rata_rata * $bobot;
+            $skor_tertimbang_total += $skor_tertimbang;
+            $skor_konversi = $rata_rata * 25;
+
+            $hasil_per_kategori[] = [
+                'kategori' => $row->kategori,
+                'rata_rata' => $rata_rata,
+                'skor_konversi' => $skor_konversi,
+                'bobot' => $bobot,
+                'skor_tertimbang' => $skor_tertimbang,
+            ];
+        }
+
+        $nilai_ikm = $skor_tertimbang_total * 25;
+        $keterangan = $this->getKeteranganIKM($nilai_ikm);
+
+        return [
+            'nilai_ikm' => round($nilai_ikm, 2),
+            'bobot' => round($bobot, 4),
+            'skor_rata_rata' => round($skor_tertimbang_total, 4),
+            'mutu' => $keterangan['mutu'],
+            'keterangan' => $keterangan['keterangan'],
+            'kinerja' => $keterangan['kinerja'],
+            'detail_kategori' => $hasil_per_kategori,
+        ];
+    }
+
+    // Hitung IKM Keseluruhan (semua data)
+    public function hitungIKMKeseluruhan()
+    {
+        $data_kategori = $this->db->query("
+            SELECT kp.kategori, AVG(kj.nilai) as rata_rata
+            FROM kuisioner_jawaban kj
+            JOIN kuisioner_pertanyaan kp ON kp.id = kj.id_pertanyaan
+            GROUP BY kp.kategori
+            ORDER BY MIN(kp.urutan) ASC
+        ")->result();
+
+        $total_responden = $this->getTotalResponden();
+
+        $hasil = $this->hitungIKMDariData($data_kategori);
+        if ($hasil) {
+            $hasil['total_responden'] = $total_responden;
+        }
+        return $hasil;
+    }
+
+    // Hitung IKM Per Periode
+    public function hitungIKMPeriode($dari, $sampai)
+    {
+        $data_kategori = $this->db->query("
+            SELECT kp.kategori, AVG(kj.nilai) as rata_rata
+            FROM kuisioner_jawaban kj
+            JOIN kuisioner_pertanyaan kp ON kp.id = kj.id_pertanyaan
+            WHERE DATE(kj.created_at) BETWEEN ? AND ?
+            GROUP BY kp.kategori
+            ORDER BY MIN(kp.urutan) ASC
+        ", [$dari, $sampai])->result();
+
+        $total_responden = $this->db->query("
+            SELECT COUNT(DISTINCT no_pel) as total
+            FROM kuisioner_jawaban
+            WHERE DATE(created_at) BETWEEN ? AND ?
+        ", [$dari, $sampai])->row()->total;
+
+        $hasil = $this->hitungIKMDariData($data_kategori);
+        if ($hasil) {
+            $hasil['total_responden'] = $total_responden;
+        }
+        return $hasil;
+    }
+
+    // IKM per wilayah keseluruhan
+    public function getIKMPerWilayahKeseluruhan()
+    {
+        $bobot = $this->getBobot();
+        return $this->db->query("
+            SELECT kj.wilayah,
+                   AVG(kj.nilai) as rata_rata,
+                   ROUND(AVG(kj.nilai) * 25, 2) as skor_konversi,
+                   ROUND(AVG(kj.nilai) * {$bobot}, 4) as skor_tertimbang,
+                   COUNT(DISTINCT kj.no_pel) as total
+            FROM kuisioner_jawaban kj
+            WHERE kj.wilayah IS NOT NULL
+            GROUP BY kj.wilayah
+            ORDER BY rata_rata DESC
+        ")->result();
+    }
+
+    // IKM per wilayah per periode
+    public function getIKMPerWilayahPeriode($dari, $sampai)
+    {
+        $bobot = $this->getBobot();
+        return $this->db->query("
+            SELECT kj.wilayah,
+                   AVG(kj.nilai) as rata_rata,
+                   ROUND(AVG(kj.nilai) * 25, 2) as skor_konversi,
+                   ROUND(AVG(kj.nilai) * {$bobot}, 4) as skor_tertimbang,
+                   COUNT(DISTINCT kj.no_pel) as total
+            FROM kuisioner_jawaban kj
+            WHERE kj.wilayah IS NOT NULL
+              AND DATE(kj.created_at) BETWEEN ? AND ?
+            GROUP BY kj.wilayah
+            ORDER BY rata_rata DESC
+        ", [$dari, $sampai])->result();
+    }
+
+    // Rata-rata per pertanyaan
+    public function getRataPerPertanyaan($dari = null, $sampai = null)
+    {
+        if ($dari && $sampai) {
+            return $this->db->query("
+                SELECT kp.id, kp.kategori, kp.pertanyaan, AVG(kj.nilai) as rata_rata, COUNT(kj.nilai) as jumlah
+                FROM kuisioner_jawaban kj
+                JOIN kuisioner_pertanyaan kp ON kp.id = kj.id_pertanyaan
+                WHERE DATE(kj.created_at) BETWEEN ? AND ?
+                GROUP BY kp.id, kp.kategori, kp.pertanyaan
+                ORDER BY kp.urutan ASC
+            ", [$dari, $sampai])->result();
+        }
+        return $this->db->query("
+            SELECT kp.id, kp.kategori, kp.pertanyaan, AVG(kj.nilai) as rata_rata, COUNT(kj.nilai) as jumlah
+            FROM kuisioner_jawaban kj
+            JOIN kuisioner_pertanyaan kp ON kp.id = kj.id_pertanyaan
+            GROUP BY kp.id, kp.kategori, kp.pertanyaan
+            ORDER BY kp.urutan ASC
+        ")->result();
     }
 
     // Daftar responden (unique by no_pel)
-    public function getDaftarResponden()
+    public function getDaftarResponden($dari = null, $sampai = null)
     {
-        return $this->db->query("SELECT no_pel, nama_pelanggan, wilayah, AVG(nilai) as rata_rata, MIN(saran) as saran, MIN(created_at) as tanggal FROM kuisioner_jawaban GROUP BY no_pel, nama_pelanggan, wilayah ORDER BY tanggal DESC")->result();
+        if ($dari && $sampai) {
+            return $this->db->query("
+                SELECT no_pel, nama_pelanggan, wilayah, AVG(nilai) as rata_rata, MIN(saran) as saran, MIN(created_at) as tanggal
+                FROM kuisioner_jawaban
+                WHERE DATE(created_at) BETWEEN ? AND ?
+                GROUP BY no_pel, nama_pelanggan, wilayah
+                ORDER BY tanggal DESC
+            ", [$dari, $sampai])->result();
+        }
+        return $this->db->query("
+            SELECT no_pel, nama_pelanggan, wilayah, AVG(nilai) as rata_rata, MIN(saran) as saran, MIN(created_at) as tanggal
+            FROM kuisioner_jawaban
+            GROUP BY no_pel, nama_pelanggan, wilayah
+            ORDER BY tanggal DESC
+        ")->result();
     }
 
     // Detail jawaban per responden
@@ -111,5 +260,12 @@ class Model_dashboard_baru extends CI_Model
         $this->db->where('kj.no_pel', $no_pel);
         $this->db->order_by('kp.urutan', 'ASC');
         return $this->db->get()->result();
+    }
+
+    // Tanggal awal data kuisioner
+    public function getTanggalAwalData()
+    {
+        $row = $this->db->select('MIN(created_at) as tanggal')->get('kuisioner_jawaban')->row();
+        return $row ? $row->tanggal : date('Y-m-d');
     }
 }
